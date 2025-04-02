@@ -852,8 +852,8 @@
       ]
     },
     "/home/surfacing8671/Desktop/dss/contracts/DssSpell.sol": {
-      "lastModificationDate": 1743557406179,
-      "contentHash": "39911767f110047e456f54b74bb5da2c",
+      "lastModificationDate": 1743557955039,
+      "contentHash": "a2c8b278810f0c0fb2286fd581044270",
       "sourceName": "contracts/DssSpell.sol",
       "solcConfig": {
         "version": "0.8.16",
@@ -1054,8 +1054,8 @@
       ]
     },
     "/home/surfacing8671/Desktop/dss/contracts/Meadian.sol": {
-      "lastModificationDate": 1743522416349,
-      "contentHash": "82be7587670c2a6edb912f571d1d465c",
+      "lastModificationDate": 1743557988529,
+      "contentHash": "c0eee7693e8892b4a70dc47c47a4ed15",
       "sourceName": "contracts/Meadian.sol",
       "solcConfig": {
         "version": "0.8.24",

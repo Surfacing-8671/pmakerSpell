@@ -2,3 +2,6 @@
 .DS_Store
 node_modules
 .env
+
+script/deploy.js
+cache

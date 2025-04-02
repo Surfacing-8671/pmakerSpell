@@ -33,7 +33,8 @@ export interface MedianGnoUsdInterface extends Interface {
       | "diss(address[])"
       | "diss(address)"
       | "drop"
-      | "kiss"
+      | "kiss(address[])"
+      | "kiss(address)"
       | "lift"
       | "orcl"
       | "peek"
@@ -63,7 +64,14 @@ export interface MedianGnoUsdInterface extends Interface {
     values: [AddressLike]
   ): string;
   encodeFunctionData(functionFragment: "drop", values: [AddressLike[]]): string;
-  encodeFunctionData(functionFragment: "kiss", values: [AddressLike]): string;
+  encodeFunctionData(
+    functionFragment: "kiss(address[])",
+    values: [AddressLike[]]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "kiss(address)",
+    values: [AddressLike]
+  ): string;
   encodeFunctionData(functionFragment: "lift", values: [AddressLike[]]): string;
   encodeFunctionData(functionFragment: "orcl", values: [AddressLike]): string;
   encodeFunctionData(functionFragment: "peek", values?: undefined): string;
@@ -94,7 +102,14 @@ export interface MedianGnoUsdInterface extends Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "drop", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "kiss", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "kiss(address[])",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "kiss(address)",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "lift", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "orcl", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "peek", data: BytesLike): Result;
@@ -233,7 +248,13 @@ export interface MedianGnoUsd extends BaseContract {
 
   drop: TypedContractMethod<[a: AddressLike[]], [void], "nonpayable">;
 
-  kiss: TypedContractMethod<[a: AddressLike], [void], "nonpayable">;
+  "kiss(address[])": TypedContractMethod<
+    [a: AddressLike[]],
+    [void],
+    "nonpayable"
+  >;
+
+  "kiss(address)": TypedContractMethod<[a: AddressLike], [void], "nonpayable">;
 
   lift: TypedContractMethod<[a: AddressLike[]], [void], "nonpayable">;
 
@@ -285,7 +306,10 @@ export interface MedianGnoUsd extends BaseContract {
     nameOrSignature: "drop"
   ): TypedContractMethod<[a: AddressLike[]], [void], "nonpayable">;
   getFunction(
-    nameOrSignature: "kiss"
+    nameOrSignature: "kiss(address[])"
+  ): TypedContractMethod<[a: AddressLike[]], [void], "nonpayable">;
+  getFunction(
+    nameOrSignature: "kiss(address)"
   ): TypedContractMethod<[a: AddressLike], [void], "nonpayable">;
   getFunction(
     nameOrSignature: "lift"
