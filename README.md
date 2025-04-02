@@ -1,132 +1,60 @@
-# Multi Collateral Dai
-![Build Status](https://github.com/makerdao/dss/actions/workflows/.github/workflows/tests.yaml/badge.svg?branch=master)
+---
+title: Template - [Executive Vote] Oracle, Flop, and Debt cieling update.
+summary: Updating Oracle feeds to v2 lp trustless sytem, changing the flop auction peramiters, and lowering the debt cieling.
+date: 2025-04-02T00:00:00.000Z
+address: ""
+---
 
-This repository contains the core smart contract code for Multi
-Collateral Dai. This is a high level description of the system, assuming
-familiarity with the basic economic mechanics as described in the
-whitepaper.
+# [Executive Proposal] Oracle, Flop, and Debt cieling update - April 2, 2025
 
-## Additional Documentation
+MKR Holders should vote for this proposal if they support the following alterations to the Maker Protocol.
 
-`dss` is also documented in the [wiki](https://github.com/makerdao/dss/wiki) and in [DEVELOPING.md](https://github.com/makerdao/dss/blob/master/DEVELOPING.md)
+If you are new to voting in the Maker Protocol, please see the [voting guide](https://github.com/makerdao/community/blob/master/content/en/learn/governance/how-voting-works.mdx) to learn how voting works, and this [wallet setup guide](https://github.com/makerdao/community/blob/master/content/en/learn/governance/voting-setup.mdx) to set up your wallet to vote.
 
-## Design Considerations
+---
 
-- Token agnostic
-  - system doesn't care about the implementation of external tokens
-  - can operate entirely independently of other systems, provided an authority assigns
-    initial collateral to users in the system and provides price data.
+## Executive Summary
 
-- Verifiable
-  - designed from the bottom up to be amenable to formal verification
-  - the core cdp and balance database makes *no* external calls and
-    contains *no* precision loss (i.e. no division)
+If this executive proposal passes, the following **changes** will occur within the Maker Protocol:
 
-- Modular
-  - multi contract core system is made to be very adaptable to changing
-    requirements.
-  - allows for implementations of e.g. auctions, liquidation, CDP risk
-    conditions, to be altered on a live system.
-  - allows for the addition of novel collateral types (e.g. whitelisting)
+- The debt cieling will be decreased to **9,000,000,000**, as detailed below.
+- The oracles will be updated to a Uniswap V2 lp price feed.
+- The flop auction peramiters will be altered, as detailed below.
 
 
-## Collateral, Adapters and Wrappers
+**Voting for this executive proposal will place your MKR in support of the changes and additions outlined above.**
 
-Collateral is the foundation of Dai and Dai creation is not possible
-without it. There are many potential candidates for collateral, whether
-native ether, ERC20 tokens, other fungible token standards like ERC777,
-non-fungible tokens, or any number of other financial instruments.
+Unless otherwise noted, the changes and additions listed above are subject to the [GSM Pause Delay](https://manual.makerdao.com/parameter-index/core/param-gsm-pause-delay). This means that if this executive proposal passes, the changes and additions listed above will only become active in the Maker Protocol after the GSM Pause Delay has expired. The GSM Pause Delay is currently set to **48 hours**.
 
-Token wrappers are one solution to the need to standardise collateral
-behaviour in Dai. Inconsistent decimals and transfer semantics are
-reasons for wrapping. For example, the WETH token is an ERC20 wrapper
-around native ether.
+This proposal will be castavle at any given time after the delay.
 
-In MCD, we abstract all of these different token behaviours away behind
-*Adapters*.
+If this executive proposal does not pass within 30 days, then it will expire and can no longer have any effect on the Maker Protocol.
 
-Adapters manipulate a single core system function: `slip`, which
-modifies user collateral balances.
+---
 
-Adapters should be very small and well defined contracts. Adapters are
-very powerful and should be carefully vetted by MKR holders. Some
-examples are given in `join.sol`. Note that the adapter is the only
-connection between a given collateral type and the concrete on-chain
-token that it represents.
+## Proposal Details
 
-There can be a multitude of adapters for each collateral type, for
-different requirements. For example, ETH collateral could have an
-adapter for native ether and *also* for WETH.
+### Change Oracles to Uniswap V2 price feeds.
+- All prices will be fetched on chain in a trustless manner. The price of dai will also be updateable in the same way.
 
+---
 
-## The Dai Token
+### Flop Auction adjustments
+- Auction time to 1 hour.
+- Bid time to 30 minutes.
+- Dai amount set to 400k.
+- MKR amount set to 100.
 
-The fundamental state of a Dai balance is given by the balance in the
-core (`vat.dai`, sometimes referred to as `D`).
+---
 
-Given this, there are a number of ways to implement the Dai that is used
-outside of the system, with different trade offs.
+## Review
 
-*Fundamentally, "Dai" is any token that is directly fungible with the
-core.*
+---
 
-In the Kovan deployment, "Dai" is represented by an ERC20 DSToken.
-After interacting with CDPs and auctions, users must `exit` from the
-system to gain a balance of this token, which can then be used in Oasis
-etc.
+## Resources
 
-It is possible to have multiple fungible Dai tokens, allowing for the
-adoption of new token standards. This needs careful consideration from a
-UX perspective, with the notion of a canonical token address becoming
-increasingly restrictive. In the future, cross-chain communication and
-scalable sidechains will likely lead to a proliferation of multiple Dai
-tokens. Users of the core could `exit` into a Plasma sidechain, an
-Ethereum shard, or a different blockchain entirely via e.g. the Cosmos
-Hub.
+Additional information about the Governance process can be found in the [Governance](https://community-development.makerdao.com/en/learn/governance) section of the MakerDAO community portal.
 
+To participate in future Governance calls, please [join us](https://github.com/makerdao/community/tree/master/governance/governance-and-risk-meetings) every Thursday at 17:00 UTC.
 
-## Price Feeds
-
-Price feeds are a crucial part of the Dai system. The code here assumes
-that there are working price feeds and that their values are being
-pushed to the contracts.
-
-Specifically, the price that is required is the highest acceptable
-quantity of CDP Dai debt per unit of collateral.
-
-
-## Liquidation and Auctions
-
-An important difference between SCD and MCD is the switch from fixed
-price sell offs to auctions as the means of liquidating collateral.
-
-The auctions implemented here are simple and expect liquidations to
-occur in *fixed size lots* (say 10,000 ETH).
-
-
-## Settlement
-
-Another important difference between SCD and MCD is in the handling of
-System Debt. System Debt is debt that has been taken from risky CDPs.
-In SCD this is covered by diluting the collateral pool via the PETH
-mechanism. In MCD this is covered by dilution of an external token,
-namely MKR.
-
-As in collateral liquidation, this dilution occurs by an auction
-(`flop`), using a fixed-size lot.
-
-In order to reduce the collateral intensity of large CDP liquidations,
-MKR dilution is delayed by a configurable period (e.g 1 week).
-
-Similarly, System Surplus is handled by an auction (`flap`), which sells
-off Dai surplus in return for the highest bidder in MKR.
-
-
-## Authentication
-
-The contracts here use a very simple multi-owner authentication system,
-where a contract totally trusts multiple other contracts to call its
-functions and configure it.
-
-It is expected that modification of this state will be via an interface
-that is used by the Governance layer.
+To add current and upcoming votes to your calendar, please see the [MakerDAO Public Events Calendar](https://calendar.google.com/calendar/embed?src=makerdao.com_3efhm2ghipksegl009ktniomdk%40group.calendar.google.com&ctz=UTC&mode=week&showCalendars=0&showPrint=0).

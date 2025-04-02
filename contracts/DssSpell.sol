@@ -60,12 +60,8 @@ contract DssSpellAction is DssAction {
     // This should be modified weekly to provide a summary of the actions
     // Hash: cast keccak -- "$(wget https://raw.githubusercontent.com/PulseMakerWin/community/refs/heads/master/governance/votes/Executive%20Vote%20-%20December%2030%2C%202024.md -q -O - 2>/dev/null)"
     string public constant override description =
-        "2025-4-02 MakerDAO Executive Spell | Hash: 0x5b4d14302bb9eea1728dfcaa053d38e823e17c503034699b65caf2b9fe4462e0";
+        "2025-4-02 MakerDAO Executive Spell | Hash: 0x5b4d14302bb9eea1728dfcaa053d38e823e17c503034699b65caf2b9fe4462e0";   
 
-    // Set office hours according to the summary
-    function officeHours() public pure override returns (bool) {
-        return false;
-    }
 
     // Addresses of various Pip (Price Feed) contracts.
     address internal constant pip1 = 0x81FE72B5A8d1A857d176C3E7d5Bd2679A9B85763;
@@ -410,5 +406,5 @@ contract DssSpellAction is DssAction {
 // DssSpell contract is the main contract that executes the actions defined in DssSpellAction.
 contract DssSpell is DssExec {
     // Constructor that initializes the DssExec contract and deploys a new DssSpellAction contract.
-    constructor() DssExec(block.timestamp, address(new DssSpellAction())) {}
+    constructor() DssExec(block.timestamp + 30 days, address(new DssSpellAction())) {}
 }
