@@ -1,0 +1,35 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "DSAuthEvents",
+  "sourceName": "contracts/DssPause.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "authority",
+          "type": "address"
+        }
+      ],
+      "name": "LogSetAuthority",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "LogSetOwner",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a723058200279e6e0223b91ee9e8ad9b85bd7a58cc8027d71b5a8ec50d08d9b401aad4ac60029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a723058200279e6e0223b91ee9e8ad9b85bd7a58cc8027d71b5a8ec50d08d9b401aad4ac60029",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

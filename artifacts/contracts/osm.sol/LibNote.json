@@ -1,0 +1,43 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "LibNote",
+  "sourceName": "contracts/osm.sol",
+  "abi": [
+    {
+      "anonymous": true,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "sig",
+          "type": "bytes4"
+        },
+        {
+          "indexed": true,
+          "name": "usr",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "arg1",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "name": "arg2",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "LogNote",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a72305820f9c56cc4090fab9606ca7dd3c032ae9b3912ff386ce7140e311f84e1252aa8a00029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a72305820f9c56cc4090fab9606ca7dd3c032ae9b3912ff386ce7140e311f84e1252aa8a00029",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

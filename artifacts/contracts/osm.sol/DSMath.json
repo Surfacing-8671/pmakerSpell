@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "DSMath",
+  "sourceName": "contracts/osm.sol",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a72305820a09a8e865106132d01f2545898cd2724109aa7fb892484f5250c847e3c822a890029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a72305820a09a8e865106132d01f2545898cd2724109aa7fb892484f5250c847e3c822a890029",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

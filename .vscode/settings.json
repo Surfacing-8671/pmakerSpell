@@ -1,0 +1,11 @@
+{
+    "wake.compiler.solc.remappings": [
+        "@1inch/=node_modules/@1inch/",
+        "@clrfund/=node_modules/@clrfund/",
+        "@openzeppelin/=node_modules/@openzeppelin/",
+        "@pancakeswap/=node_modules/@pancakeswap/",
+        "forge-std/=node_modules/forge-std/",
+        "hardhat-deploy/=node_modules/hardhat-deploy/",
+        "hardhat/=node_modules/hardhat/"
+    ]
+}
