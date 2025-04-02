@@ -21,7 +21,7 @@ pragma experimental ABIEncoderV2;
 
 import "./src/DssExec.sol";
 import "./src/DssAction.sol";
-import "hardhat/console.sol";
+
 // Interface for interacting with Gem-like tokens.
 
 
@@ -156,9 +156,7 @@ contract DssSpellAction is DssAction {
     address internal constant chief = 0x21EDd6f4542423737075E674624C0F6596c629C1;
 
     // The main function that defines the actions to be executed.
-    function actions() public override {
-
-        console.log(DssExecLib.govGuard());
+    function actions() public override {  
         // Sets the amount of MKR to 10 in debt auction
         DssExecLib.setDebtAuctionMKRAmount(10);
         // Sets the amount of DAI to be controled by a contract. will change to 1000 usd value of dai debt auction.    
@@ -168,11 +166,10 @@ contract DssSpellAction is DssAction {
         DssExecLib.setDebtAuctionDuration(3600);
         // Sets the bid duration of the debt auction to 1800 seconds (30 minutes).
         DssExecLib.setDebtAuctionBidDuration(1800);
-        // Sets the global debt ceiling to 9,000,000,000 DAI.
-        DssExecLib.setGlobalDebtCeiling(9000000000);
+        // Sets the global debt ceiling to 5,000,000,000 DAI.
+        DssExecLib.setGlobalDebtCeiling(5000000000);
         // Authorizes the DIA Oracle to interact with the Spotter.
         DssExecLib.authorize(DssExecLib.spotter(), DIAORACLE);
-
         // // Removes the owner of the pause contract.
         PauseLike(pause).setOwner(
             address(0)

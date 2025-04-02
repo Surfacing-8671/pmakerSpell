@@ -1,6 +1,6 @@
 ---
 title: Template - [Executive Vote] Oracle, Flop, New DsChief, and Debt ceiling update.
-summary: Updating Oracle feeds to v2 lp trustless system, changing the flop auction parameters, and lowering the debt ceiling.
+summary: Updating Oracle feeds to v2 lp trustless system, changing the flop auction parameters, authorizing a new Chief, and lowering the debt ceiling.
 date: 2025-04-02T00:00:00.000Z
 address: ""
 ---
@@ -24,7 +24,7 @@ If you are new to voting in the Maker Protocol, please see the [voting guide](ht
 If this executive proposal passes, the following **changes** will occur within the Maker Protocol:
 
 
-- The debt ceiling will be decreased to **9,000,000,000**, as detailed below.
+- The debt ceiling will be decreased to **5,000,000,000**, as detailed below.
 - The oracles will be updated to a Uniswap V2 lp price feed.
 - The flop auction parameters will be changed, as detailed below.
 - Ownership change on the DsPause contract to the zero address **0x0000000000000000000000000000000000000000**.
@@ -65,7 +65,7 @@ If this executive proposal does not pass within 180 days, then it will expire an
 
 
 ### Methodology and Reasoning
-The current price feed oracles depend on whitelisted actors to update the price in a timely manner using off chain price read data. Pulsechain has no reliable off-chain data feed that is available. Also the reliance on 3rd party actors to update the price accordingly is what has caused the price oracle failure in the first place. Those whitelisted actors decided to not update the prices on pulsechain leading to stale outdated prices that are susceptible to relay attacks. Depending on whitelisted actors has many flaws to the system. They could go rogue and update the prices in a malicious manner or update them inaccurately. Also if they stop updating the prices then they thus become stale. Moving to this system removes the human element in the system and allows for the prices to be updated in a trustless manner as contracts do not have any malicious intent, they are immutable code. The one downside is that it too needs to be poked hourly or the price may become stale but this is mitigated by allowing any user to poke the oracles and the omega price feeder at any given time (unless the individual oracle itself is not updateable due to time delay for the TWAP). On top of that the price feeds and oracles will be poked regularly via an XUSD token transfer so if as a user it may be too difficult to poke the oracles, you can just transfer the token and it will do the work for you. This will ensure proper price correctness and freshness in a trustless and decentralized manner (no centralized risk of a server crashing).
+The current price feed oracles depend on whitelisted actors to update the price in a timely manner using off chain price read data. Pulsechain has no reliable off-chain data feed that is available. Also the reliance on 3rd party actors to update the price accordingly is what has caused the price oracle failure in the first place. Those whitelisted actors decided to not update the prices on pulsechain leading to stale outdated prices that are susceptible to relay attacks. Depending on whitelisted actors has many flaws to the system. They could go rogue and update the prices in a malicious manner or update them inaccurately. Also if they stop updating the prices then they thus become stale. Moving to this system removes the human element in the system and allows for the prices to be updated in a trustless manner as contracts do not have any malicious intent, they are immutable code. The one downside is that it too needs to be poked hourly or the price may become stale but this is mitigated by allowing any user to poke the oracles and the omega price feeder at any given time (unless the individual oracle itself is not updateable due to time delay for the TWAP). 
 
 
 ---
@@ -79,7 +79,7 @@ The current price feed oracles depend on whitelisted actors to update the price 
 - The beg amount, or the amount that MKR will decrease per bid will remain the same at 3%.
 ---
 ### Debt Ceiling Limit Decrease
-- The Debt Ceiling global line will be set to **9,000,000,000** DAI tokens. This ensures that a majority of the debt will have to be paid back before and new collateral positions get opened. This is important because with an updated price oracle, the system can read that vaults are over collateralized and give out more debt that can be used to leverage short pDai harming the entire ecosystem. We do not want to incentivise more collateral into the system, we want to pay back bad debt, not create more of it. This ceiling is advised to be raised or changed in the future depending on the health of the entire system because once we are over peg we want to fill those vaults again with collateral to re establish the equilibrium of the system.
+- The Debt Ceiling global line will be set to **5,000,000,000** DAI tokens. This ensures that a majority of the debt will have to be paid back before and new collateral positions get opened. This is important because with an updated price oracle, the system can read that vaults are over collateralized and give out more debt that can be used to leverage short pDai harming the entire ecosystem. We do not want to incentivise more collateral into the system, we want to pay back bad debt, not create more of it. This number is in alignemt with future total supply expectations but up for discussion as a **0** debt cieling currently would not hurt and also can be updated in the future with another spell. This ceiling is advised to be raised or changed in the future depending on the health of the entire system because once we are over peg we want to fill those vaults again with collateral to re establish the equilibrium of the system.
 
 
 ## Review
