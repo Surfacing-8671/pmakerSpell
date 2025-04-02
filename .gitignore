@@ -5,3 +5,9 @@ node_modules
 
 script/deploy.js
 cache
+artifacts
+.wake
+.vscode
+.nyc_output
+.github
+typechain-types

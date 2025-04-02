@@ -6,5 +6,6 @@ export type { DssSpell } from "./DssSpell";
 export type { DssSpellAction } from "./DssSpellAction";
 export type { GemLike } from "./GemLike";
 export type { IlkRegLike } from "./IlkRegLike";
+export type { MedianLike } from "./MedianLike";
 export type { OracleLike } from "./OracleLike";
 export type { PauseLike } from "./PauseLike";

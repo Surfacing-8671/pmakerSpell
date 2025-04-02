@@ -14,129 +14,21 @@ import * as Contracts from ".";
 declare module "hardhat/types/runtime" {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
     getContractFactory(
-      name: "Abacus",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Abacus__factory>;
-    getContractFactory(
-      name: "ExponentialDecrease",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ExponentialDecrease__factory>;
-    getContractFactory(
-      name: "LinearDecrease",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.LinearDecrease__factory>;
-    getContractFactory(
-      name: "StairstepExponentialDecrease",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.StairstepExponentialDecrease__factory>;
-    getContractFactory(
-      name: "Cat",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Cat__factory>;
-    getContractFactory(
-      name: "Kicker",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Kicker__factory>;
-    getContractFactory(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.VatLike__factory>;
-    getContractFactory(
-      name: "VowLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.VowLike__factory>;
-    getContractFactory(
       name: "ChainLog",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.ChainLog__factory>;
     getContractFactory(
-      name: "AbacusLike",
+      name: "Chief",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.AbacusLike__factory>;
+    ): Promise<Contracts.Chief__factory>;
     getContractFactory(
-      name: "Clipper",
+      name: "DSAuthority",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Clipper__factory>;
+    ): Promise<Contracts.DSAuthority__factory>;
     getContractFactory(
-      name: "ClipperCallee",
+      name: "GemLike",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ClipperCallee__factory>;
-    getContractFactory(
-      name: "DogLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.DogLike__factory>;
-    getContractFactory(
-      name: "PipLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.PipLike__factory>;
-    getContractFactory(
-      name: "SpotterLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.SpotterLike__factory>;
-    getContractFactory(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.VatLike__factory>;
-    getContractFactory(
-      name: "Cure",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Cure__factory>;
-    getContractFactory(
-      name: "SourceLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.SourceLike__factory>;
-    getContractFactory(
-      name: "CurveLPOracle",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.CurveLPOracle__factory>;
-    getContractFactory(
-      name: "CurvePoolLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.CurvePoolLike__factory>;
-    getContractFactory(
-      name: "OracleLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.OracleLike__factory>;
-    getContractFactory(
-      name: "TokenLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.TokenLike__factory>;
-    getContractFactory(
-      name: "Dai",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Dai__factory>;
-    getContractFactory(
-      name: "ChainlogLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ChainlogLike__factory>;
-    getContractFactory(
-      name: "DaiPoker",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.DaiPoker__factory>;
-    getContractFactory(
-      name: "Fileable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Fileable__factory>;
-    getContractFactory(
-      name: "IPulsexV1OracleFactory",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IPulsexV1OracleFactory__factory>;
-    getContractFactory(
-      name: "ClipperLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ClipperLike__factory>;
-    getContractFactory(
-      name: "Dog",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Dog__factory>;
-    getContractFactory(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.VatLike__factory>;
-    getContractFactory(
-      name: "VowLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.VowLike__factory>;
+    ): Promise<Contracts.GemLike__factory>;
     getContractFactory(
       name: "DSAuth",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -161,118 +53,6 @@ declare module "hardhat/types/runtime" {
       name: "DSPauseProxy",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.DSPauseProxy__factory>;
-    getContractFactory(
-      name: "Drippable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Drippable__factory>;
-    getContractFactory(
-      name: "DssSpell",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.DssSpell__factory>;
-    getContractFactory(
-      name: "DssSpellAction",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.DssSpellAction__factory>;
-    getContractFactory(
-      name: "GemLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.GemLike__factory>;
-    getContractFactory(
-      name: "IlkRegLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IlkRegLike__factory>;
-    getContractFactory(
-      name: "OracleLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.OracleLike__factory>;
-    getContractFactory(
-      name: "PauseLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.PauseLike__factory>;
-    getContractFactory(
-      name: "CatLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.CatLike__factory>;
-    getContractFactory(
-      name: "ClipLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ClipLike__factory>;
-    getContractFactory(
-      name: "CureLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.CureLike__factory>;
-    getContractFactory(
-      name: "DogLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.DogLike__factory>;
-    getContractFactory(
-      name: "End",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.End__factory>;
-    getContractFactory(
-      name: "FlipLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.FlipLike__factory>;
-    getContractFactory(
-      name: "PipLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.PipLike__factory>;
-    getContractFactory(
-      name: "PotLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.PotLike__factory>;
-    getContractFactory(
-      name: "SpotLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.SpotLike__factory>;
-    getContractFactory(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.VatLike__factory>;
-    getContractFactory(
-      name: "VowLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.VowLike__factory>;
-    getContractFactory(
-      name: "Flapper",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Flapper__factory>;
-    getContractFactory(
-      name: "GemLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.GemLike__factory>;
-    getContractFactory(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.VatLike__factory>;
-    getContractFactory(
-      name: "CatLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.CatLike__factory>;
-    getContractFactory(
-      name: "Flipper",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Flipper__factory>;
-    getContractFactory(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.VatLike__factory>;
-    getContractFactory(
-      name: "Flopper",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Flopper__factory>;
-    getContractFactory(
-      name: "GemLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.GemLike__factory>;
-    getContractFactory(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.VatLike__factory>;
-    getContractFactory(
-      name: "VowLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.VowLike__factory>;
     getContractFactory(
       name: "CatLike",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -314,34 +94,6 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.VatLike__factory>;
     getContractFactory(
-      name: "DaiJoin",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.DaiJoin__factory>;
-    getContractFactory(
-      name: "DSTokenLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.DSTokenLike__factory>;
-    getContractFactory(
-      name: "GemJoin",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.GemJoin__factory>;
-    getContractFactory(
-      name: "GemLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.GemLike__factory>;
-    getContractFactory(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.VatLike__factory>;
-    getContractFactory(
-      name: "Jug",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Jug__factory>;
-    getContractFactory(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.VatLike__factory>;
-    getContractFactory(
       name: "LibNote",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.LibNote__factory>;
@@ -349,6 +101,38 @@ declare module "hardhat/types/runtime" {
       name: "MedianGnoUsd",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.MedianGnoUsd__factory>;
+    getContractFactory(
+      name: "ChainlogLike",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ChainlogLike__factory>;
+    getContractFactory(
+      name: "DaiPoker",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.DaiPoker__factory>;
+    getContractFactory(
+      name: "Fileable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Fileable__factory>;
+    getContractFactory(
+      name: "IPulsexV1OracleFactory",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IPulsexV1OracleFactory__factory>;
+    getContractFactory(
+      name: "ChainlogLike",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ChainlogLike__factory>;
+    getContractFactory(
+      name: "Fileable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Fileable__factory>;
+    getContractFactory(
+      name: "IPulsexV1OracleFactory",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IPulsexV1OracleFactory__factory>;
+    getContractFactory(
+      name: "MakerAuctionOracle",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.MakerAuctionOracle__factory>;
     getContractFactory(
       name: "IERC20",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -365,6 +149,38 @@ declare module "hardhat/types/runtime" {
       name: "OmegaPokerFeed",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.OmegaPokerFeed__factory>;
+    getContractFactory(
+      name: "IERC20",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IERC20__factory>;
+    getContractFactory(
+      name: "IPulsexV1OracleFactory",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IPulsexV1OracleFactory__factory>;
+    getContractFactory(
+      name: "MeadianLike",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.MeadianLike__factory>;
+    getContractFactory(
+      name: "OmegaPokerFeedTest",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.OmegaPokerFeedTest__factory>;
+    getContractFactory(
+      name: "IUniswapV2Factory",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IUniswapV2Factory__factory>;
+    getContractFactory(
+      name: "IUniswapV2Pair",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IUniswapV2Pair__factory>;
+    getContractFactory(
+      name: "PulsexV1OracleFactory",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.PulsexV1OracleFactory__factory>;
+    getContractFactory(
+      name: "UniOracle",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.UniOracle__factory>;
     getContractFactory(
       name: "DSAuth",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -398,25 +214,41 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.OSM__factory>;
     getContractFactory(
-      name: "Pot",
+      name: "Authorizable",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Pot__factory>;
+    ): Promise<Contracts.Authorizable__factory>;
     getContractFactory(
-      name: "VatLike",
+      name: "Drippable",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.VatLike__factory>;
+    ): Promise<Contracts.Drippable__factory>;
     getContractFactory(
-      name: "PipLike",
+      name: "DssSpell",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.PipLike__factory>;
+    ): Promise<Contracts.DssSpell__factory>;
     getContractFactory(
-      name: "Spotter",
+      name: "DssSpellAction",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Spotter__factory>;
+    ): Promise<Contracts.DssSpellAction__factory>;
     getContractFactory(
-      name: "VatLike",
+      name: "GemLike",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.VatLike__factory>;
+    ): Promise<Contracts.GemLike__factory>;
+    getContractFactory(
+      name: "IlkRegLike",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IlkRegLike__factory>;
+    getContractFactory(
+      name: "MedianLike",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.MedianLike__factory>;
+    getContractFactory(
+      name: "OracleLike",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.OracleLike__factory>;
+    getContractFactory(
+      name: "PauseLike",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.PauseLike__factory>;
     getContractFactory(
       name: "DssAction",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -514,6 +346,18 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.RwaOracleLike__factory>;
     getContractFactory(
+      name: "PipLike",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.PipLike__factory>;
+    getContractFactory(
+      name: "Spotter",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Spotter__factory>;
+    getContractFactory(
+      name: "VatLike",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.VatLike__factory>;
+    getContractFactory(
       name: "Vat",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Vat__factory>;
@@ -535,160 +379,25 @@ declare module "hardhat/types/runtime" {
     ): Promise<Contracts.Vow__factory>;
 
     getContractAt(
-      name: "Abacus",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Abacus>;
-    getContractAt(
-      name: "ExponentialDecrease",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ExponentialDecrease>;
-    getContractAt(
-      name: "LinearDecrease",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.LinearDecrease>;
-    getContractAt(
-      name: "StairstepExponentialDecrease",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.StairstepExponentialDecrease>;
-    getContractAt(
-      name: "Cat",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Cat>;
-    getContractAt(
-      name: "Kicker",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Kicker>;
-    getContractAt(
-      name: "VatLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.VatLike>;
-    getContractAt(
-      name: "VowLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.VowLike>;
-    getContractAt(
       name: "ChainLog",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.ChainLog>;
     getContractAt(
-      name: "AbacusLike",
+      name: "Chief",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.AbacusLike>;
+    ): Promise<Contracts.Chief>;
     getContractAt(
-      name: "Clipper",
+      name: "DSAuthority",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.Clipper>;
+    ): Promise<Contracts.DSAuthority>;
     getContractAt(
-      name: "ClipperCallee",
+      name: "GemLike",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.ClipperCallee>;
-    getContractAt(
-      name: "DogLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.DogLike>;
-    getContractAt(
-      name: "PipLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.PipLike>;
-    getContractAt(
-      name: "SpotterLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.SpotterLike>;
-    getContractAt(
-      name: "VatLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.VatLike>;
-    getContractAt(
-      name: "Cure",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Cure>;
-    getContractAt(
-      name: "SourceLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.SourceLike>;
-    getContractAt(
-      name: "CurveLPOracle",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.CurveLPOracle>;
-    getContractAt(
-      name: "CurvePoolLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.CurvePoolLike>;
-    getContractAt(
-      name: "OracleLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.OracleLike>;
-    getContractAt(
-      name: "TokenLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.TokenLike>;
-    getContractAt(
-      name: "Dai",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Dai>;
-    getContractAt(
-      name: "ChainlogLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ChainlogLike>;
-    getContractAt(
-      name: "DaiPoker",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.DaiPoker>;
-    getContractAt(
-      name: "Fileable",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Fileable>;
-    getContractAt(
-      name: "IPulsexV1OracleFactory",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.IPulsexV1OracleFactory>;
-    getContractAt(
-      name: "ClipperLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ClipperLike>;
-    getContractAt(
-      name: "Dog",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Dog>;
-    getContractAt(
-      name: "VatLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.VatLike>;
-    getContractAt(
-      name: "VowLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.VowLike>;
+    ): Promise<Contracts.GemLike>;
     getContractAt(
       name: "DSAuth",
       address: string | ethers.Addressable,
@@ -719,146 +428,6 @@ declare module "hardhat/types/runtime" {
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.DSPauseProxy>;
-    getContractAt(
-      name: "Drippable",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Drippable>;
-    getContractAt(
-      name: "DssSpell",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.DssSpell>;
-    getContractAt(
-      name: "DssSpellAction",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.DssSpellAction>;
-    getContractAt(
-      name: "GemLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.GemLike>;
-    getContractAt(
-      name: "IlkRegLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.IlkRegLike>;
-    getContractAt(
-      name: "OracleLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.OracleLike>;
-    getContractAt(
-      name: "PauseLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.PauseLike>;
-    getContractAt(
-      name: "CatLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.CatLike>;
-    getContractAt(
-      name: "ClipLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ClipLike>;
-    getContractAt(
-      name: "CureLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.CureLike>;
-    getContractAt(
-      name: "DogLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.DogLike>;
-    getContractAt(
-      name: "End",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.End>;
-    getContractAt(
-      name: "FlipLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.FlipLike>;
-    getContractAt(
-      name: "PipLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.PipLike>;
-    getContractAt(
-      name: "PotLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.PotLike>;
-    getContractAt(
-      name: "SpotLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.SpotLike>;
-    getContractAt(
-      name: "VatLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.VatLike>;
-    getContractAt(
-      name: "VowLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.VowLike>;
-    getContractAt(
-      name: "Flapper",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Flapper>;
-    getContractAt(
-      name: "GemLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.GemLike>;
-    getContractAt(
-      name: "VatLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.VatLike>;
-    getContractAt(
-      name: "CatLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.CatLike>;
-    getContractAt(
-      name: "Flipper",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Flipper>;
-    getContractAt(
-      name: "VatLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.VatLike>;
-    getContractAt(
-      name: "Flopper",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Flopper>;
-    getContractAt(
-      name: "GemLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.GemLike>;
-    getContractAt(
-      name: "VatLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.VatLike>;
-    getContractAt(
-      name: "VowLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.VowLike>;
     getContractAt(
       name: "CatLike",
       address: string | ethers.Addressable,
@@ -910,41 +479,6 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.VatLike>;
     getContractAt(
-      name: "DaiJoin",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.DaiJoin>;
-    getContractAt(
-      name: "DSTokenLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.DSTokenLike>;
-    getContractAt(
-      name: "GemJoin",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.GemJoin>;
-    getContractAt(
-      name: "GemLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.GemLike>;
-    getContractAt(
-      name: "VatLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.VatLike>;
-    getContractAt(
-      name: "Jug",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Jug>;
-    getContractAt(
-      name: "VatLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.VatLike>;
-    getContractAt(
       name: "LibNote",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
@@ -954,6 +488,46 @@ declare module "hardhat/types/runtime" {
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.MedianGnoUsd>;
+    getContractAt(
+      name: "ChainlogLike",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ChainlogLike>;
+    getContractAt(
+      name: "DaiPoker",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.DaiPoker>;
+    getContractAt(
+      name: "Fileable",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Fileable>;
+    getContractAt(
+      name: "IPulsexV1OracleFactory",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IPulsexV1OracleFactory>;
+    getContractAt(
+      name: "ChainlogLike",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ChainlogLike>;
+    getContractAt(
+      name: "Fileable",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Fileable>;
+    getContractAt(
+      name: "IPulsexV1OracleFactory",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IPulsexV1OracleFactory>;
+    getContractAt(
+      name: "MakerAuctionOracle",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.MakerAuctionOracle>;
     getContractAt(
       name: "IERC20",
       address: string | ethers.Addressable,
@@ -974,6 +548,46 @@ declare module "hardhat/types/runtime" {
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.OmegaPokerFeed>;
+    getContractAt(
+      name: "IERC20",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IERC20>;
+    getContractAt(
+      name: "IPulsexV1OracleFactory",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IPulsexV1OracleFactory>;
+    getContractAt(
+      name: "MeadianLike",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.MeadianLike>;
+    getContractAt(
+      name: "OmegaPokerFeedTest",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.OmegaPokerFeedTest>;
+    getContractAt(
+      name: "IUniswapV2Factory",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IUniswapV2Factory>;
+    getContractAt(
+      name: "IUniswapV2Pair",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IUniswapV2Pair>;
+    getContractAt(
+      name: "PulsexV1OracleFactory",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.PulsexV1OracleFactory>;
+    getContractAt(
+      name: "UniOracle",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.UniOracle>;
     getContractAt(
       name: "DSAuth",
       address: string | ethers.Addressable,
@@ -1015,30 +629,50 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.OSM>;
     getContractAt(
-      name: "Pot",
+      name: "Authorizable",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.Pot>;
+    ): Promise<Contracts.Authorizable>;
     getContractAt(
-      name: "VatLike",
+      name: "Drippable",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.VatLike>;
+    ): Promise<Contracts.Drippable>;
     getContractAt(
-      name: "PipLike",
+      name: "DssSpell",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.PipLike>;
+    ): Promise<Contracts.DssSpell>;
     getContractAt(
-      name: "Spotter",
+      name: "DssSpellAction",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.Spotter>;
+    ): Promise<Contracts.DssSpellAction>;
     getContractAt(
-      name: "VatLike",
+      name: "GemLike",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.VatLike>;
+    ): Promise<Contracts.GemLike>;
+    getContractAt(
+      name: "IlkRegLike",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IlkRegLike>;
+    getContractAt(
+      name: "MedianLike",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.MedianLike>;
+    getContractAt(
+      name: "OracleLike",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.OracleLike>;
+    getContractAt(
+      name: "PauseLike",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.PauseLike>;
     getContractAt(
       name: "DssAction",
       address: string | ethers.Addressable,
@@ -1159,6 +793,21 @@ declare module "hardhat/types/runtime" {
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.RwaOracleLike>;
+    getContractAt(
+      name: "PipLike",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.PipLike>;
+    getContractAt(
+      name: "Spotter",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Spotter>;
+    getContractAt(
+      name: "VatLike",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.VatLike>;
     getContractAt(
       name: "Vat",
       address: string | ethers.Addressable,
@@ -1186,129 +835,21 @@ declare module "hardhat/types/runtime" {
     ): Promise<Contracts.Vow>;
 
     deployContract(
-      name: "Abacus",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Abacus>;
-    deployContract(
-      name: "ExponentialDecrease",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.ExponentialDecrease>;
-    deployContract(
-      name: "LinearDecrease",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.LinearDecrease>;
-    deployContract(
-      name: "StairstepExponentialDecrease",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.StairstepExponentialDecrease>;
-    deployContract(
-      name: "Cat",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Cat>;
-    deployContract(
-      name: "Kicker",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Kicker>;
-    deployContract(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
-      name: "VowLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VowLike>;
-    deployContract(
       name: "ChainLog",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.ChainLog>;
     deployContract(
-      name: "AbacusLike",
+      name: "Chief",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.AbacusLike>;
+    ): Promise<Contracts.Chief>;
     deployContract(
-      name: "Clipper",
+      name: "DSAuthority",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Clipper>;
+    ): Promise<Contracts.DSAuthority>;
     deployContract(
-      name: "ClipperCallee",
+      name: "GemLike",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.ClipperCallee>;
-    deployContract(
-      name: "DogLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.DogLike>;
-    deployContract(
-      name: "PipLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.PipLike>;
-    deployContract(
-      name: "SpotterLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.SpotterLike>;
-    deployContract(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
-      name: "Cure",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Cure>;
-    deployContract(
-      name: "SourceLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.SourceLike>;
-    deployContract(
-      name: "CurveLPOracle",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.CurveLPOracle>;
-    deployContract(
-      name: "CurvePoolLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.CurvePoolLike>;
-    deployContract(
-      name: "OracleLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.OracleLike>;
-    deployContract(
-      name: "TokenLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.TokenLike>;
-    deployContract(
-      name: "Dai",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Dai>;
-    deployContract(
-      name: "ChainlogLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.ChainlogLike>;
-    deployContract(
-      name: "DaiPoker",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.DaiPoker>;
-    deployContract(
-      name: "Fileable",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Fileable>;
-    deployContract(
-      name: "IPulsexV1OracleFactory",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.IPulsexV1OracleFactory>;
-    deployContract(
-      name: "ClipperLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.ClipperLike>;
-    deployContract(
-      name: "Dog",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Dog>;
-    deployContract(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
-      name: "VowLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VowLike>;
+    ): Promise<Contracts.GemLike>;
     deployContract(
       name: "DSAuth",
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -1333,118 +874,6 @@ declare module "hardhat/types/runtime" {
       name: "DSPauseProxy",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.DSPauseProxy>;
-    deployContract(
-      name: "Drippable",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Drippable>;
-    deployContract(
-      name: "DssSpell",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.DssSpell>;
-    deployContract(
-      name: "DssSpellAction",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.DssSpellAction>;
-    deployContract(
-      name: "GemLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.GemLike>;
-    deployContract(
-      name: "IlkRegLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.IlkRegLike>;
-    deployContract(
-      name: "OracleLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.OracleLike>;
-    deployContract(
-      name: "PauseLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.PauseLike>;
-    deployContract(
-      name: "CatLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.CatLike>;
-    deployContract(
-      name: "ClipLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.ClipLike>;
-    deployContract(
-      name: "CureLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.CureLike>;
-    deployContract(
-      name: "DogLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.DogLike>;
-    deployContract(
-      name: "End",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.End>;
-    deployContract(
-      name: "FlipLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.FlipLike>;
-    deployContract(
-      name: "PipLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.PipLike>;
-    deployContract(
-      name: "PotLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.PotLike>;
-    deployContract(
-      name: "SpotLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.SpotLike>;
-    deployContract(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
-      name: "VowLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VowLike>;
-    deployContract(
-      name: "Flapper",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Flapper>;
-    deployContract(
-      name: "GemLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.GemLike>;
-    deployContract(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
-      name: "CatLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.CatLike>;
-    deployContract(
-      name: "Flipper",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Flipper>;
-    deployContract(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
-      name: "Flopper",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Flopper>;
-    deployContract(
-      name: "GemLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.GemLike>;
-    deployContract(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
-      name: "VowLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VowLike>;
     deployContract(
       name: "CatLike",
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -1486,34 +915,6 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.VatLike>;
     deployContract(
-      name: "DaiJoin",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.DaiJoin>;
-    deployContract(
-      name: "DSTokenLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.DSTokenLike>;
-    deployContract(
-      name: "GemJoin",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.GemJoin>;
-    deployContract(
-      name: "GemLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.GemLike>;
-    deployContract(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
-      name: "Jug",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Jug>;
-    deployContract(
-      name: "VatLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
       name: "LibNote",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.LibNote>;
@@ -1521,6 +922,38 @@ declare module "hardhat/types/runtime" {
       name: "MedianGnoUsd",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.MedianGnoUsd>;
+    deployContract(
+      name: "ChainlogLike",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ChainlogLike>;
+    deployContract(
+      name: "DaiPoker",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.DaiPoker>;
+    deployContract(
+      name: "Fileable",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.Fileable>;
+    deployContract(
+      name: "IPulsexV1OracleFactory",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IPulsexV1OracleFactory>;
+    deployContract(
+      name: "ChainlogLike",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ChainlogLike>;
+    deployContract(
+      name: "Fileable",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.Fileable>;
+    deployContract(
+      name: "IPulsexV1OracleFactory",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IPulsexV1OracleFactory>;
+    deployContract(
+      name: "MakerAuctionOracle",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.MakerAuctionOracle>;
     deployContract(
       name: "IERC20",
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -1537,6 +970,38 @@ declare module "hardhat/types/runtime" {
       name: "OmegaPokerFeed",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.OmegaPokerFeed>;
+    deployContract(
+      name: "IERC20",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IERC20>;
+    deployContract(
+      name: "IPulsexV1OracleFactory",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IPulsexV1OracleFactory>;
+    deployContract(
+      name: "MeadianLike",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.MeadianLike>;
+    deployContract(
+      name: "OmegaPokerFeedTest",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.OmegaPokerFeedTest>;
+    deployContract(
+      name: "IUniswapV2Factory",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV2Factory>;
+    deployContract(
+      name: "IUniswapV2Pair",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV2Pair>;
+    deployContract(
+      name: "PulsexV1OracleFactory",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.PulsexV1OracleFactory>;
+    deployContract(
+      name: "UniOracle",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.UniOracle>;
     deployContract(
       name: "DSAuth",
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -1570,25 +1035,41 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.OSM>;
     deployContract(
-      name: "Pot",
+      name: "Authorizable",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Pot>;
+    ): Promise<Contracts.Authorizable>;
     deployContract(
-      name: "VatLike",
+      name: "Drippable",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
+    ): Promise<Contracts.Drippable>;
     deployContract(
-      name: "PipLike",
+      name: "DssSpell",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.PipLike>;
+    ): Promise<Contracts.DssSpell>;
     deployContract(
-      name: "Spotter",
+      name: "DssSpellAction",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Spotter>;
+    ): Promise<Contracts.DssSpellAction>;
     deployContract(
-      name: "VatLike",
+      name: "GemLike",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
+    ): Promise<Contracts.GemLike>;
+    deployContract(
+      name: "IlkRegLike",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IlkRegLike>;
+    deployContract(
+      name: "MedianLike",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.MedianLike>;
+    deployContract(
+      name: "OracleLike",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.OracleLike>;
+    deployContract(
+      name: "PauseLike",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.PauseLike>;
     deployContract(
       name: "DssAction",
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -1685,6 +1166,18 @@ declare module "hardhat/types/runtime" {
       name: "RwaOracleLike",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.RwaOracleLike>;
+    deployContract(
+      name: "PipLike",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.PipLike>;
+    deployContract(
+      name: "Spotter",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.Spotter>;
+    deployContract(
+      name: "VatLike",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.VatLike>;
     deployContract(
       name: "Vat",
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -1707,160 +1200,25 @@ declare module "hardhat/types/runtime" {
     ): Promise<Contracts.Vow>;
 
     deployContract(
-      name: "Abacus",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Abacus>;
-    deployContract(
-      name: "ExponentialDecrease",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.ExponentialDecrease>;
-    deployContract(
-      name: "LinearDecrease",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.LinearDecrease>;
-    deployContract(
-      name: "StairstepExponentialDecrease",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.StairstepExponentialDecrease>;
-    deployContract(
-      name: "Cat",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Cat>;
-    deployContract(
-      name: "Kicker",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Kicker>;
-    deployContract(
-      name: "VatLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
-      name: "VowLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VowLike>;
-    deployContract(
       name: "ChainLog",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.ChainLog>;
     deployContract(
-      name: "AbacusLike",
+      name: "Chief",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.AbacusLike>;
+    ): Promise<Contracts.Chief>;
     deployContract(
-      name: "Clipper",
+      name: "DSAuthority",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Clipper>;
+    ): Promise<Contracts.DSAuthority>;
     deployContract(
-      name: "ClipperCallee",
+      name: "GemLike",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.ClipperCallee>;
-    deployContract(
-      name: "DogLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.DogLike>;
-    deployContract(
-      name: "PipLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.PipLike>;
-    deployContract(
-      name: "SpotterLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.SpotterLike>;
-    deployContract(
-      name: "VatLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
-      name: "Cure",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Cure>;
-    deployContract(
-      name: "SourceLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.SourceLike>;
-    deployContract(
-      name: "CurveLPOracle",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.CurveLPOracle>;
-    deployContract(
-      name: "CurvePoolLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.CurvePoolLike>;
-    deployContract(
-      name: "OracleLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.OracleLike>;
-    deployContract(
-      name: "TokenLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.TokenLike>;
-    deployContract(
-      name: "Dai",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Dai>;
-    deployContract(
-      name: "ChainlogLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.ChainlogLike>;
-    deployContract(
-      name: "DaiPoker",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.DaiPoker>;
-    deployContract(
-      name: "Fileable",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Fileable>;
-    deployContract(
-      name: "IPulsexV1OracleFactory",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.IPulsexV1OracleFactory>;
-    deployContract(
-      name: "ClipperLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.ClipperLike>;
-    deployContract(
-      name: "Dog",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Dog>;
-    deployContract(
-      name: "VatLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
-      name: "VowLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VowLike>;
+    ): Promise<Contracts.GemLike>;
     deployContract(
       name: "DSAuth",
       args: any[],
@@ -1891,146 +1249,6 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.DSPauseProxy>;
-    deployContract(
-      name: "Drippable",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Drippable>;
-    deployContract(
-      name: "DssSpell",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.DssSpell>;
-    deployContract(
-      name: "DssSpellAction",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.DssSpellAction>;
-    deployContract(
-      name: "GemLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.GemLike>;
-    deployContract(
-      name: "IlkRegLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.IlkRegLike>;
-    deployContract(
-      name: "OracleLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.OracleLike>;
-    deployContract(
-      name: "PauseLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.PauseLike>;
-    deployContract(
-      name: "CatLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.CatLike>;
-    deployContract(
-      name: "ClipLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.ClipLike>;
-    deployContract(
-      name: "CureLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.CureLike>;
-    deployContract(
-      name: "DogLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.DogLike>;
-    deployContract(
-      name: "End",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.End>;
-    deployContract(
-      name: "FlipLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.FlipLike>;
-    deployContract(
-      name: "PipLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.PipLike>;
-    deployContract(
-      name: "PotLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.PotLike>;
-    deployContract(
-      name: "SpotLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.SpotLike>;
-    deployContract(
-      name: "VatLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
-      name: "VowLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VowLike>;
-    deployContract(
-      name: "Flapper",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Flapper>;
-    deployContract(
-      name: "GemLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.GemLike>;
-    deployContract(
-      name: "VatLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
-      name: "CatLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.CatLike>;
-    deployContract(
-      name: "Flipper",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Flipper>;
-    deployContract(
-      name: "VatLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
-      name: "Flopper",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Flopper>;
-    deployContract(
-      name: "GemLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.GemLike>;
-    deployContract(
-      name: "VatLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
-      name: "VowLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VowLike>;
     deployContract(
       name: "CatLike",
       args: any[],
@@ -2082,41 +1300,6 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.VatLike>;
     deployContract(
-      name: "DaiJoin",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.DaiJoin>;
-    deployContract(
-      name: "DSTokenLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.DSTokenLike>;
-    deployContract(
-      name: "GemJoin",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.GemJoin>;
-    deployContract(
-      name: "GemLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.GemLike>;
-    deployContract(
-      name: "VatLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
-      name: "Jug",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Jug>;
-    deployContract(
-      name: "VatLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
-    deployContract(
       name: "LibNote",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -2126,6 +1309,46 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.MedianGnoUsd>;
+    deployContract(
+      name: "ChainlogLike",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ChainlogLike>;
+    deployContract(
+      name: "DaiPoker",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.DaiPoker>;
+    deployContract(
+      name: "Fileable",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.Fileable>;
+    deployContract(
+      name: "IPulsexV1OracleFactory",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IPulsexV1OracleFactory>;
+    deployContract(
+      name: "ChainlogLike",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ChainlogLike>;
+    deployContract(
+      name: "Fileable",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.Fileable>;
+    deployContract(
+      name: "IPulsexV1OracleFactory",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IPulsexV1OracleFactory>;
+    deployContract(
+      name: "MakerAuctionOracle",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.MakerAuctionOracle>;
     deployContract(
       name: "IERC20",
       args: any[],
@@ -2146,6 +1369,46 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.OmegaPokerFeed>;
+    deployContract(
+      name: "IERC20",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IERC20>;
+    deployContract(
+      name: "IPulsexV1OracleFactory",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IPulsexV1OracleFactory>;
+    deployContract(
+      name: "MeadianLike",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.MeadianLike>;
+    deployContract(
+      name: "OmegaPokerFeedTest",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.OmegaPokerFeedTest>;
+    deployContract(
+      name: "IUniswapV2Factory",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV2Factory>;
+    deployContract(
+      name: "IUniswapV2Pair",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV2Pair>;
+    deployContract(
+      name: "PulsexV1OracleFactory",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.PulsexV1OracleFactory>;
+    deployContract(
+      name: "UniOracle",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.UniOracle>;
     deployContract(
       name: "DSAuth",
       args: any[],
@@ -2187,30 +1450,50 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.OSM>;
     deployContract(
-      name: "Pot",
+      name: "Authorizable",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Pot>;
+    ): Promise<Contracts.Authorizable>;
     deployContract(
-      name: "VatLike",
+      name: "Drippable",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
+    ): Promise<Contracts.Drippable>;
     deployContract(
-      name: "PipLike",
+      name: "DssSpell",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.PipLike>;
+    ): Promise<Contracts.DssSpell>;
     deployContract(
-      name: "Spotter",
+      name: "DssSpellAction",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Spotter>;
+    ): Promise<Contracts.DssSpellAction>;
     deployContract(
-      name: "VatLike",
+      name: "GemLike",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.VatLike>;
+    ): Promise<Contracts.GemLike>;
+    deployContract(
+      name: "IlkRegLike",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IlkRegLike>;
+    deployContract(
+      name: "MedianLike",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.MedianLike>;
+    deployContract(
+      name: "OracleLike",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.OracleLike>;
+    deployContract(
+      name: "PauseLike",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.PauseLike>;
     deployContract(
       name: "DssAction",
       args: any[],
@@ -2331,6 +1614,21 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.RwaOracleLike>;
+    deployContract(
+      name: "PipLike",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.PipLike>;
+    deployContract(
+      name: "Spotter",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.Spotter>;
+    deployContract(
+      name: "VatLike",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.VatLike>;
     deployContract(
       name: "Vat",
       args: any[],

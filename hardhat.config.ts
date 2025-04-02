@@ -73,6 +73,7 @@ const config: HardhatUserConfig = {
             url: 'https://rpc.pulsechain.com',
             
             },
+            allowUnlimitedContractSize: true,
             // just and well known address for just reading.  not valuable
             accounts: [{ privateKey: PRIVATE_KEY, balance: '1000000000000000000000000000000000000' }],
                 

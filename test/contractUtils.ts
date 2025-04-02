@@ -3,7 +3,7 @@ import {HardhatEthersSigner} from "@nomicfoundation/hardhat-ethers/signers";
 import hre, {ethers} from "hardhat";
 // import {ethers} from "ethers"
 
-import gemJoin from '/home/surfacing8671/Desktop/dss/artifacts/contracts/join.sol/GemJoin.json'
+
 import {
     ChainLog
 } from "../typechain-types";
@@ -37,16 +37,7 @@ async function createGaugeController( oOneSwap: ChainLog, name: string) {
   
 }
 
-async function createJoin(address: string) {
- 
-      let signer = await ethers.getImpersonatedSigner('0x208266c96F9A4e61856EFe2417eaB3b9EF59B22f')
-    let authLibFactory =  await hre.ethers.getContractFactory([], gemJoin.bytecode, signer);
-    let authLib =  authLibFactory.attach(address);
 
-   
-
-    return authLib;
-}
 
 async function createDssPause() {
     await hre.network.provider.request({

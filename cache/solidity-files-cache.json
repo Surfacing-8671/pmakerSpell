@@ -1,426 +1,6 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/home/surfacing8671/Desktop/dss/contracts/abaci.sol": {
-      "lastModificationDate": 1743334673028,
-      "contentHash": "ce23a5ec94fb2deed0335a57686a5582",
-      "sourceName": "contracts/abaci.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.6.12"
-      ],
-      "artifacts": [
-        "Abacus",
-        "ExponentialDecrease",
-        "LinearDecrease",
-        "StairstepExponentialDecrease"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/clip.sol": {
-      "lastModificationDate": 1743334673028,
-      "contentHash": "84c7d71cacd439096c213ca2d58be6de",
-      "sourceName": "contracts/clip.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.6.12"
-      ],
-      "artifacts": [
-        "AbacusLike",
-        "Clipper",
-        "ClipperCallee",
-        "DogLike",
-        "PipLike",
-        "SpotterLike",
-        "VatLike"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/dai.sol": {
-      "lastModificationDate": 1743334673028,
-      "contentHash": "ef8027a3574365b354e139541505672a",
-      "sourceName": "contracts/dai.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.6.12"
-      ],
-      "artifacts": [
-        "Dai"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/dog.sol": {
-      "lastModificationDate": 1743334673029,
-      "contentHash": "f00b5510c01904879dd561f88deb13bc",
-      "sourceName": "contracts/dog.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.6.12"
-      ],
-      "artifacts": [
-        "ClipperLike",
-        "Dog",
-        "VatLike",
-        "VowLike"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/end.sol": {
-      "lastModificationDate": 1743334673029,
-      "contentHash": "b1aeff6bf64acafa5a11f40c9f9c44bc",
-      "sourceName": "contracts/end.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.6.12"
-      ],
-      "artifacts": [
-        "CatLike",
-        "ClipLike",
-        "CureLike",
-        "DogLike",
-        "End",
-        "FlipLike",
-        "PipLike",
-        "PotLike",
-        "SpotLike",
-        "VatLike",
-        "VowLike"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/flap.sol": {
-      "lastModificationDate": 1743334673029,
-      "contentHash": "5097d3f236dd383173b61f208afa4a35",
-      "sourceName": "contracts/flap.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.6.12"
-      ],
-      "artifacts": [
-        "Flapper",
-        "GemLike",
-        "VatLike"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/flop.sol": {
-      "lastModificationDate": 1743334673029,
-      "contentHash": "079203d7ee3ad2d5fbc0ae787c744f6c",
-      "sourceName": "contracts/flop.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.6.12"
-      ],
-      "artifacts": [
-        "Flopper",
-        "GemLike",
-        "VatLike",
-        "VowLike"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/join.sol": {
-      "lastModificationDate": 1743334673029,
-      "contentHash": "31e26ba8f9263844531eef81e26da240",
-      "sourceName": "contracts/join.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.6.12"
-      ],
-      "artifacts": [
-        "DSTokenLike",
-        "DaiJoin",
-        "GemJoin",
-        "GemLike",
-        "VatLike"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/jug.sol": {
-      "lastModificationDate": 1743334673029,
-      "contentHash": "4ad2245aefb174587640cad5b9e9d6e0",
-      "sourceName": "contracts/jug.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.6.12"
-      ],
-      "artifacts": [
-        "Jug",
-        "VatLike"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/pot.sol": {
-      "lastModificationDate": 1743334673029,
-      "contentHash": "e4a3924e798d911aff1803dcbd5ec1b1",
-      "sourceName": "contracts/pot.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.6.12"
-      ],
-      "artifacts": [
-        "Pot",
-        "VatLike"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/spot.sol": {
-      "lastModificationDate": 1743334673029,
-      "contentHash": "163373991ede2cb9db348032da77777d",
-      "sourceName": "contracts/spot.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.6.12"
-      ],
-      "artifacts": [
-        "PipLike",
-        "Spotter",
-        "VatLike"
-      ]
-    },
     "/home/surfacing8671/Desktop/dss/contracts/vat.sol": {
       "lastModificationDate": 1743352859124,
       "contentHash": "e3f86457734e190184b011b2bbcdee71",
@@ -494,120 +74,6 @@
         "Vow"
       ]
     },
-    "/home/surfacing8671/Desktop/dss/contracts/cat.sol": {
-      "lastModificationDate": 1743334673028,
-      "contentHash": "9e89c1159103b400204a5b4d1e8fc8db",
-      "sourceName": "contracts/cat.sol",
-      "solcConfig": {
-        "version": "0.8.24",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.12"
-      ],
-      "artifacts": [
-        "Cat",
-        "Kicker",
-        "VatLike",
-        "VowLike"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/cure.sol": {
-      "lastModificationDate": 1743334673028,
-      "contentHash": "1f05a51f0036ecc1dcc804bf4a41f7d8",
-      "sourceName": "contracts/cure.sol",
-      "solcConfig": {
-        "version": "0.8.24",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.12"
-      ],
-      "artifacts": [
-        "Cure",
-        "SourceLike"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/flip.sol": {
-      "lastModificationDate": 1743335515655,
-      "contentHash": "7ad814c2ba3f678397ca015838019258",
-      "sourceName": "contracts/flip.sol",
-      "solcConfig": {
-        "version": "0.8.24",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.12"
-      ],
-      "artifacts": [
-        "CatLike",
-        "Flipper",
-        "VatLike"
-      ]
-    },
     "/home/surfacing8671/Desktop/dss/contracts/chainlog.sol": {
       "lastModificationDate": 1743341309869,
       "contentHash": "9574f72a2142dd9b2f28e23ab996e772",
@@ -643,10 +109,94 @@
         "ChainLog"
       ]
     },
-    "/home/surfacing8671/Desktop/dss/contracts/src/CollateralOpts.sol": {
-      "lastModificationDate": 1743344107403,
-      "contentHash": "bd72213a6fee79a585b96e7fba980b71",
-      "sourceName": "contracts/src/CollateralOpts.sol",
+    "/home/surfacing8671/Desktop/dss/contracts/DssPause.sol": {
+      "lastModificationDate": 1743344413645,
+      "contentHash": "fbf6c5c2dd41ff6fdd0b5a9e6fe4f56f",
+      "sourceName": "contracts/DssPause.sol",
+      "solcConfig": {
+        "version": "0.5.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.23 >=0.5.0 <0.6.0"
+      ],
+      "artifacts": [
+        "DSAuth",
+        "DSAuthEvents",
+        "DSAuthority",
+        "DSNote",
+        "DSPause",
+        "DSPauseProxy"
+      ]
+    },
+    "/home/surfacing8671/Desktop/dss/contracts/ilkReg.sol": {
+      "lastModificationDate": 1743347847860,
+      "contentHash": "1db996ad7a8c2e6093f47d92aa3a0d9c",
+      "sourceName": "contracts/ilkReg.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.12"
+      ],
+      "artifacts": [
+        "CatLike",
+        "ClipLike",
+        "DogLike",
+        "FlipLike",
+        "GemInfo",
+        "IlkRegistry",
+        "JoinLike",
+        "SpotLike",
+        "TokenLike",
+        "VatLike"
+      ]
+    },
+    "/home/surfacing8671/Desktop/dss/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1743334845484,
+      "contentHash": "681c532e816169606d13a5fe8b475074",
+      "sourceName": "hardhat/console.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -673,14 +223,377 @@
       },
       "imports": [],
       "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    },
+    "/home/surfacing8671/Desktop/dss/contracts/osm.sol": {
+      "lastModificationDate": 1743471811318,
+      "contentHash": "7381780bf1ae925da52d1fb73f83f1d7",
+      "sourceName": "contracts/osm.sol",
+      "solcConfig": {
+        "version": "0.5.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.23 >=0.5.0 <0.6.0"
+      ],
+      "artifacts": [
+        "DSAuth",
+        "DSAuthEvents",
+        "DSAuthority",
+        "DSMath",
+        "DSNote",
+        "DSThing",
+        "DSValue",
+        "LibNote",
+        "OSM"
+      ]
+    },
+    "/home/surfacing8671/Desktop/dss/contracts/OracleModules/DaiOracle.sol": {
+      "lastModificationDate": 1743609429000,
+      "contentHash": "de17aab55d8c3ddc1baf80410848df67",
+      "sourceName": "contracts/OracleModules/DaiOracle.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./FixedPointMathLib.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "ChainlogLike",
+        "DaiPoker",
+        "Fileable",
+        "IPulsexV1OracleFactory"
+      ]
+    },
+    "/home/surfacing8671/Desktop/dss/contracts/OracleModules/FixedPointMathLib.sol": {
+      "lastModificationDate": 1743609434778,
+      "contentHash": "494511524292c48049bda27e43c32edc",
+      "sourceName": "contracts/OracleModules/FixedPointMathLib.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.0"
+      ],
+      "artifacts": [
+        "FixedPointMathLib"
+      ]
+    },
+    "/home/surfacing8671/Desktop/dss/contracts/OracleModules/OmegaPriceFeeder.sol": {
+      "lastModificationDate": 1743620273800,
+      "contentHash": "abaf15bb64a99e072e84d619a468d0ff",
+      "sourceName": "contracts/OracleModules/OmegaPriceFeeder.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./unorderedAddress.sol",
+        "./FixedPointMathLib.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IERC20",
+        "IPulsexV1OracleFactory",
+        "MeadianLike",
+        "OmegaPokerFeed"
+      ]
+    },
+    "/home/surfacing8671/Desktop/dss/contracts/OracleModules/unorderedAddress.sol": {
+      "lastModificationDate": 1743609439394,
+      "contentHash": "de3b68b33a808c43fbbc419bdb56bd14",
+      "sourceName": "contracts/OracleModules/unorderedAddress.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "HitchensUnorderedAddressSetLib"
+      ]
+    },
+    "/home/surfacing8671/Desktop/dss/contracts/OracleModules/MakerAuctionOracle.sol": {
+      "lastModificationDate": 1743609423638,
+      "contentHash": "a5259cbb5703ba9a1803243566ac98b7",
+      "sourceName": "contracts/OracleModules/MakerAuctionOracle.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./FixedPointMathLib.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "ChainlogLike",
+        "Fileable",
+        "IPulsexV1OracleFactory",
+        "MakerAuctionOracle"
+      ]
+    },
+    "/home/surfacing8671/Desktop/dss/contracts/OracleModules/PulsexV1OracleFactory.sol": {
+      "lastModificationDate": 1743609417640,
+      "contentHash": "618ea0340809990715248a01cdfb07ee",
+      "sourceName": "contracts/OracleModules/PulsexV1OracleFactory.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.6",
+        ">=0.5.0",
+        ">=0.4.0",
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "FixedPoint",
+        "IUniswapV2Factory",
+        "IUniswapV2Pair",
+        "PulsexV1OracleFactory",
+        "SafeMath",
+        "UniOracle",
+        "UniswapV2Library",
+        "UniswapV2OracleLibrary"
+      ]
+    },
+    "/home/surfacing8671/Desktop/dss/contracts/MedianModule/Meadian.sol": {
+      "lastModificationDate": 1743609503502,
+      "contentHash": "c0eee7693e8892b4a70dc47c47a4ed15",
+      "sourceName": "contracts/MedianModule/Meadian.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.10"
+      ],
+      "artifacts": [
+        "LibNote",
+        "MedianGnoUsd"
+      ]
+    },
+    "/home/surfacing8671/Desktop/dss/contracts/Spell/src/DssAction.sol": {
+      "lastModificationDate": 1743422735836,
+      "contentHash": "daa092b6579cb85e564adb91cb8f54ef",
+      "sourceName": "contracts/Spell/src/DssAction.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./DssExecLib.sol",
+        "./CollateralOpts.sol"
+      ],
+      "versionPragmas": [
         "^0.8.16"
       ],
-      "artifacts": []
+      "artifacts": [
+        "DssAction"
+      ]
     },
-    "/home/surfacing8671/Desktop/dss/contracts/src/DssExecLib.sol": {
+    "/home/surfacing8671/Desktop/dss/contracts/Spell/src/DssExecLib.sol": {
       "lastModificationDate": 1743423309410,
       "contentHash": "8705794ff05696d95aeb5463496a411d",
-      "sourceName": "contracts/src/DssExecLib.sol",
+      "sourceName": "contracts/Spell/src/DssExecLib.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -733,10 +646,10 @@
         "RwaOracleLike"
       ]
     },
-    "/home/surfacing8671/Desktop/dss/contracts/src/DssAction.sol": {
-      "lastModificationDate": 1743422735836,
-      "contentHash": "daa092b6579cb85e564adb91cb8f54ef",
-      "sourceName": "contracts/src/DssAction.sol",
+    "/home/surfacing8671/Desktop/dss/contracts/Spell/src/CollateralOpts.sol": {
+      "lastModificationDate": 1743344107403,
+      "contentHash": "bd72213a6fee79a585b96e7fba980b71",
+      "sourceName": "contracts/Spell/src/CollateralOpts.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -761,21 +674,16 @@
           }
         }
       },
-      "imports": [
-        "./DssExecLib.sol",
-        "./CollateralOpts.sol"
-      ],
+      "imports": [],
       "versionPragmas": [
         "^0.8.16"
       ],
-      "artifacts": [
-        "DssAction"
-      ]
+      "artifacts": []
     },
-    "/home/surfacing8671/Desktop/dss/contracts/src/DssExec.sol": {
+    "/home/surfacing8671/Desktop/dss/contracts/Spell/src/DssExec.sol": {
       "lastModificationDate": 1743344107403,
       "contentHash": "d367e15f2283dabc77446757e93d5b3d",
-      "sourceName": "contracts/src/DssExec.sol",
+      "sourceName": "contracts/Spell/src/DssExec.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -811,50 +719,10 @@
         "SpellAction"
       ]
     },
-    "/home/surfacing8671/Desktop/dss/contracts/DssPause.sol": {
-      "lastModificationDate": 1743344413645,
-      "contentHash": "fbf6c5c2dd41ff6fdd0b5a9e6fe4f56f",
-      "sourceName": "contracts/DssPause.sol",
-      "solcConfig": {
-        "version": "0.5.0",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.4.23 >=0.5.0 <0.6.0"
-      ],
-      "artifacts": [
-        "DSAuth",
-        "DSAuthEvents",
-        "DSAuthority",
-        "DSNote",
-        "DSPause",
-        "DSPauseProxy"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/DssSpell.sol": {
-      "lastModificationDate": 1743557955039,
-      "contentHash": "a2c8b278810f0c0fb2286fd581044270",
-      "sourceName": "contracts/DssSpell.sol",
+    "/home/surfacing8671/Desktop/dss/contracts/Spell/DssSpell.sol": {
+      "lastModificationDate": 1743626556897,
+      "contentHash": "f83f9b6d5049f6ac3690e50ec00144a5",
+      "sourceName": "contracts/Spell/DssSpell.sol",
       "solcConfig": {
         "version": "0.8.16",
         "settings": {
@@ -880,25 +748,28 @@
       },
       "imports": [
         "./src/DssExec.sol",
-        "./src/DssAction.sol"
+        "./src/DssAction.sol",
+        "hardhat/console.sol"
       ],
       "versionPragmas": [
         "0.8.16"
       ],
       "artifacts": [
+        "Authorizable",
         "Drippable",
         "DssSpell",
         "DssSpellAction",
         "GemLike",
         "IlkRegLike",
+        "MedianLike",
         "OracleLike",
         "PauseLike"
       ]
     },
-    "/home/surfacing8671/Desktop/dss/contracts/ilkReg.sol": {
-      "lastModificationDate": 1743347847860,
-      "contentHash": "1db996ad7a8c2e6093f47d92aa3a0d9c",
-      "sourceName": "contracts/ilkReg.sol",
+    "/home/surfacing8671/Desktop/dss/contracts/spot.sol": {
+      "lastModificationDate": 1743609965066,
+      "contentHash": "163373991ede2cb9db348032da77777d",
+      "sourceName": "contracts/spot.sol",
       "solcConfig": {
         "version": "0.6.12",
         "settings": {
@@ -927,58 +798,15 @@
         "^0.6.12"
       ],
       "artifacts": [
-        "CatLike",
-        "ClipLike",
-        "DogLike",
-        "FlipLike",
-        "GemInfo",
-        "IlkRegistry",
-        "JoinLike",
-        "SpotLike",
-        "TokenLike",
+        "PipLike",
+        "Spotter",
         "VatLike"
       ]
     },
-    "/home/surfacing8671/Desktop/dss/contracts/FixedPointMathLib.sol": {
-      "lastModificationDate": 1743418036835,
-      "contentHash": "494511524292c48049bda27e43c32edc",
-      "sourceName": "contracts/FixedPointMathLib.sol",
-      "solcConfig": {
-        "version": "0.8.24",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.8.0"
-      ],
-      "artifacts": [
-        "FixedPointMathLib"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/OmegaPriceFeeder.sol": {
-      "lastModificationDate": 1743478534366,
-      "contentHash": "b43783b1161da1d83e882d0f16197945",
-      "sourceName": "contracts/OmegaPriceFeeder.sol",
+    "/home/surfacing8671/Desktop/dss/contracts/OracleModules/OmegaPriceFeederTest.sol": {
+      "lastModificationDate": 1743620628795,
+      "contentHash": "fc901e8619b9867dea2a0d05a1880622",
+      "sourceName": "contracts/OracleModules/OmegaPriceFeederTest.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -1014,13 +842,13 @@
         "IERC20",
         "IPulsexV1OracleFactory",
         "MeadianLike",
-        "OmegaPokerFeed"
+        "OmegaPokerFeedTest"
       ]
     },
-    "/home/surfacing8671/Desktop/dss/contracts/unorderedAddress.sol": {
-      "lastModificationDate": 1743415975514,
-      "contentHash": "de3b68b33a808c43fbbc419bdb56bd14",
-      "sourceName": "contracts/unorderedAddress.sol",
+    "/home/surfacing8671/Desktop/dss/contracts/DsChiefModules/DsChief.sol": {
+      "lastModificationDate": 1743624321269,
+      "contentHash": "9fb12f4e83d34fd041dbd271c4fec314",
+      "sourceName": "contracts/DsChiefModules/DsChief.sol",
       "solcConfig": {
         "version": "0.8.24",
         "settings": {
@@ -1047,206 +875,12 @@
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.24"
+        "^0.8.21"
       ],
       "artifacts": [
-        "HitchensUnorderedAddressSetLib"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/Meadian.sol": {
-      "lastModificationDate": 1743557988529,
-      "contentHash": "c0eee7693e8892b4a70dc47c47a4ed15",
-      "sourceName": "contracts/Meadian.sol",
-      "solcConfig": {
-        "version": "0.8.24",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.10"
-      ],
-      "artifacts": [
-        "LibNote",
-        "MedianGnoUsd"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/node_modules/hardhat/console.sol": {
-      "lastModificationDate": 1743334845484,
-      "contentHash": "681c532e816169606d13a5fe8b475074",
-      "sourceName": "hardhat/console.sol",
-      "solcConfig": {
-        "version": "0.8.24",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.4.22 <0.9.0"
-      ],
-      "artifacts": [
-        "console"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/DaiOracle.sol": {
-      "lastModificationDate": 1743538854389,
-      "contentHash": "c28472a0b1742b800bbf5fcd7d13e74c",
-      "sourceName": "contracts/DaiOracle.sol",
-      "solcConfig": {
-        "version": "0.8.24",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./unorderedAddress.sol",
-        "./FixedPointMathLib.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.24"
-      ],
-      "artifacts": [
-        "ChainlogLike",
-        "DaiPoker",
-        "Fileable",
-        "IPulsexV1OracleFactory"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/CurvePoolLpOracle.sol": {
-      "lastModificationDate": 1743456594067,
-      "contentHash": "25abb5595320d40133025ce1db594af0",
-      "sourceName": "contracts/CurvePoolLpOracle.sol",
-      "solcConfig": {
-        "version": "0.8.13",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.8.13"
-      ],
-      "artifacts": [
-        "CurveLPOracle",
-        "CurvePoolLike",
-        "OracleLike",
-        "TokenLike"
-      ]
-    },
-    "/home/surfacing8671/Desktop/dss/contracts/osm.sol": {
-      "lastModificationDate": 1743471811318,
-      "contentHash": "7381780bf1ae925da52d1fb73f83f1d7",
-      "sourceName": "contracts/osm.sol",
-      "solcConfig": {
-        "version": "0.5.0",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.4.23 >=0.5.0 <0.6.0"
-      ],
-      "artifacts": [
-        "DSAuth",
-        "DSAuthEvents",
+        "Chief",
         "DSAuthority",
-        "DSMath",
-        "DSNote",
-        "DSThing",
-        "DSValue",
-        "LibNote",
-        "OSM"
+        "GemLike"
       ]
     }
   }

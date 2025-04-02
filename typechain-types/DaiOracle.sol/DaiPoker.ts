@@ -27,11 +27,9 @@ export interface DaiPokerInterface extends Interface {
       | "DAIEDAI"
       | "LOG"
       | "deny"
-      | "medians"
       | "oracleFactory"
       | "poke"
       | "rely"
-      | "tokenIn"
       | "wards"
   ): FunctionFragment;
 
@@ -40,33 +38,23 @@ export interface DaiPokerInterface extends Interface {
   encodeFunctionData(functionFragment: "LOG", values?: undefined): string;
   encodeFunctionData(functionFragment: "deny", values: [AddressLike]): string;
   encodeFunctionData(
-    functionFragment: "medians",
-    values: [AddressLike]
-  ): string;
-  encodeFunctionData(
     functionFragment: "oracleFactory",
     values?: undefined
   ): string;
   encodeFunctionData(functionFragment: "poke", values?: undefined): string;
   encodeFunctionData(functionFragment: "rely", values: [AddressLike]): string;
-  encodeFunctionData(
-    functionFragment: "tokenIn",
-    values: [AddressLike]
-  ): string;
   encodeFunctionData(functionFragment: "wards", values: [AddressLike]): string;
 
   decodeFunctionResult(functionFragment: "DAI", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "DAIEDAI", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "LOG", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "deny", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "medians", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "oracleFactory",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "poke", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "rely", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "tokenIn", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "wards", data: BytesLike): Result;
 }
 
@@ -121,15 +109,11 @@ export interface DaiPoker extends BaseContract {
 
   deny: TypedContractMethod<[usr: AddressLike], [void], "nonpayable">;
 
-  medians: TypedContractMethod<[arg0: AddressLike], [string], "view">;
-
   oracleFactory: TypedContractMethod<[], [string], "view">;
 
   poke: TypedContractMethod<[], [void], "nonpayable">;
 
   rely: TypedContractMethod<[usr: AddressLike], [void], "nonpayable">;
-
-  tokenIn: TypedContractMethod<[arg0: AddressLike], [string], "view">;
 
   wards: TypedContractMethod<[arg0: AddressLike], [bigint], "view">;
 
@@ -150,9 +134,6 @@ export interface DaiPoker extends BaseContract {
     nameOrSignature: "deny"
   ): TypedContractMethod<[usr: AddressLike], [void], "nonpayable">;
   getFunction(
-    nameOrSignature: "medians"
-  ): TypedContractMethod<[arg0: AddressLike], [string], "view">;
-  getFunction(
     nameOrSignature: "oracleFactory"
   ): TypedContractMethod<[], [string], "view">;
   getFunction(
@@ -161,9 +142,6 @@ export interface DaiPoker extends BaseContract {
   getFunction(
     nameOrSignature: "rely"
   ): TypedContractMethod<[usr: AddressLike], [void], "nonpayable">;
-  getFunction(
-    nameOrSignature: "tokenIn"
-  ): TypedContractMethod<[arg0: AddressLike], [string], "view">;
   getFunction(
     nameOrSignature: "wards"
   ): TypedContractMethod<[arg0: AddressLike], [bigint], "view">;
