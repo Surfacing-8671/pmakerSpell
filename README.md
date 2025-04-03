@@ -75,7 +75,7 @@ The current price feed oracles depend on whitelisted actors to update the price 
 - Auction time is 1 hour.
 - Bid time to 30 minutes.
 - The DAI amount will be updateable via the MakerAuctionOracle so that the amount of Dai per auction will always reflect roughly 1000 USD. This can be updated every 6 hours by any user that decides to poke it.
-- MKR amount set to 100.
+- MKR amount set to 10.
 - The beg amount, or the amount that MKR will decrease per bid will remain the same at 3%.
 ---
 ### Debt Ceiling Limit Decrease
