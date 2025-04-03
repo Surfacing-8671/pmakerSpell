@@ -24,7 +24,7 @@ If you are new to voting in the Maker Protocol, please see the [voting guide](ht
 If this executive proposal passes, the following **changes** will occur within the Maker Protocol:
 
 
-- The debt ceiling will be decreased to **5,000,000,000**, as detailed below.
+- The debt ceiling will be decreased to **0**, as detailed below.
 - The oracles will be updated to a Uniswap V2 lp price feed.
 - The flop auction parameters will be changed, as detailed below.
 - Ownership change on the DsPause contract to the zero address **0x0000000000000000000000000000000000000000**.
@@ -79,8 +79,7 @@ The current price feed oracles depend on whitelisted actors to update the price 
 - The beg amount, or the amount that MKR will decrease per bid will remain the same at 3%.
 ---
 ### Debt Ceiling Limit Decrease
-- The Debt Ceiling global line will be set to **5,000,000,000** DAI tokens. This ensures that a majority of the debt will have to be paid back before and new collateral positions get opened. This is important because with an updated price oracle, the system can read that vaults are over collateralized and give out more debt that can be used to leverage short pDai harming the entire ecosystem. We do not want to incentivise more collateral into the system, we want to pay back bad debt, not create more of it. This number is in alignemt with future total supply expectations but up for discussion as a **0** debt cieling currently would not hurt and also can be updated in the future with another spell. This ceiling is advised to be raised or changed in the future depending on the health of the entire system because once we are over peg we want to fill those vaults again with collateral to re establish the equilibrium of the system.
-
+- The Debt Ceiling global line will be set to **0** DAI tokens. This ensures that a majority of the debt will have to be paid back before and new collateral positions get opened. This is important because with an updated price oracle, the system can read that vaults are over collateralized and give out more debt that can be used to leverage short pDai harming the entire ecosystem. We do not want to incentivise more collateral into the system, we want to pay back bad debt, not create more of it. This ceiling is advised to be raised or changed in the future depending on the health of the entire system because once we are over peg we want to fill those vaults again with collateral to re establish the equilibrium of the system.
 
 ## Review
 The entire spell and this github are up for review and scrutiny for safety and debate. This is an enormous change to the ecosystem and peer review is needed to ensure the safety of the protocol and its users. You are more than welcome to submit a pull request if you think that any changes need to be made to the contract before we deploy the spell. Any and all help is greatly appreciated. You may also voice your concerns or opinions of the proposal in the pMaker Telegram channel [here](t.me/PulseChainMKR)

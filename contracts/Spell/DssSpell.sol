@@ -167,7 +167,7 @@ contract DssSpellAction is DssAction {
         // Sets the bid duration of the debt auction to 1800 seconds (30 minutes).
         DssExecLib.setDebtAuctionBidDuration(1800);
         // Sets the global debt ceiling to 5,000,000,000 DAI.
-        DssExecLib.setGlobalDebtCeiling(5000000000);
+        DssExecLib.setGlobalDebtCeiling(0);
         // Authorizes the DIA Oracle to interact with the Spotter.
         DssExecLib.authorize(DssExecLib.spotter(), DIAORACLE);
         // // Removes the owner of the pause contract.
