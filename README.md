@@ -32,3 +32,5 @@ mpx hardhat test
 
 The data of the price feed simulation tests will be saved to the makerData.json file for review.
 
+
+Read the proposal review [here](https://github.com/Surfacing-8671/pmakerSpell/blob/main/SpellReview.md)
