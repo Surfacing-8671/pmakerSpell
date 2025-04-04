@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import fs from "fs"
 import hre, {ethers, network} from 'hardhat'
 
-import {createDssPause, createDssSpell, createJoin, getContract} from './contractUtils';
+import {createDssPause, createDssSpell, createJoin} from './contractUtils';
 import {loadFixture, mine, time} from "@nomicfoundation/hardhat-toolbox/network-helpers";
 
 
@@ -269,7 +269,7 @@ const medians = [
 
 for(let i = 0; i < medians.length; i++){
   
-
+console.log(i)
     await omega.add(medians[i], await currentOmega.medians(medians[i]), await currentOmega.tokenIn(medians[i]))
 
 

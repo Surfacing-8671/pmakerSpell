@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import fs from "fs"
 import hre, { ethers, network } from 'hardhat'
 
-import { createDssPause, createDssSpell, createJoin, getContract } from './contractUtils';
+import { createDssPause, createDssSpell, createJoin } from './contractUtils';
 import { loadFixture, mine, time } from "@nomicfoundation/hardhat-toolbox/network-helpers";
 
 
@@ -733,14 +733,14 @@ describe('Spell Cast', () => {
       
       
 
-        expect(await pauser.plot(await speller.getAddress(), codeHash, '0x61461954', 1743680705)).to.not.be.reverted
-        await time.increaseTo(1743680705 + 500);
-        expect(await pauser.exec(await speller.getAddress(), codeHash, '0x61461954', 1743680705)).to.not.be.reverted
+        expect(await pauser.plot(await speller.getAddress(), codeHash, '0x61461954', 1743880705)).to.not.be.reverted
+        await time.increaseTo(1743880705 + 500);
+        expect(await pauser.exec(await speller.getAddress(), codeHash, '0x61461954', 1743880705)).to.not.be.reverted
 
         let dai = await hre.ethers.getContractFactory('DaiPoker')
         let daipoker = dai.attach('0xCe5d1c4613f113fB8abFb9415e1F0D947B120Bf2')
-       // expect(await mo.poke()).to.not.be.reverted;
-        //expect(await daipoker.poke()).to.not.be.reverted;
+       expect(await mo.poke()).to.not.be.reverted;
+        expect(await daipoker.poke()).to.not.be.reverted;
 
        
       //  expect(await omega.poke()).to.not.be.reverted;
@@ -855,7 +855,7 @@ describe('Spell Cast', () => {
 
         }
 
-        await time.increaseTo(1743680705 + 3600 + 500);
+        await time.increaseTo(1743880705 + 3600 + 500);
       //  await omega.poke()
         for (let i = 0; i < addresses.length; i++) {
             let ooosm = osm.attach(addresses[i])

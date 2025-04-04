@@ -720,8 +720,8 @@
       ]
     },
     "/home/surfacing8671/Desktop/dss/contracts/Spell/DssSpell.sol": {
-      "lastModificationDate": 1743626556897,
-      "contentHash": "f83f9b6d5049f6ac3690e50ec00144a5",
+      "lastModificationDate": 1743650182061,
+      "contentHash": "83e4af5f35aae18706661ab4cc3000fd",
       "sourceName": "contracts/Spell/DssSpell.sol",
       "solcConfig": {
         "version": "0.8.16",
@@ -748,19 +748,15 @@
       },
       "imports": [
         "./src/DssExec.sol",
-        "./src/DssAction.sol",
-        "hardhat/console.sol"
+        "./src/DssAction.sol"
       ],
       "versionPragmas": [
         "0.8.16"
       ],
       "artifacts": [
         "Authorizable",
-        "Drippable",
         "DssSpell",
         "DssSpellAction",
-        "GemLike",
-        "IlkRegLike",
         "MedianLike",
         "OracleLike",
         "PauseLike"
