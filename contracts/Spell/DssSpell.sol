@@ -24,15 +24,18 @@ import "./src/DssAction.sol";
 
 // Interface for interacting with Gem-like tokens.
 
-
 // Interface for interacting with Pause contracts.
 interface Authorizable {
     function rely(address) external;
+
     function deny(address) external;
+
     function setAuthority(address) external;
 }
+
 interface PauseLike {
     function setOwner(address owner_) external;
+
     function setAuthority(Authorizable authority_) external;
 }
 
@@ -147,50 +150,149 @@ contract DssSpellAction is DssAction {
     address internal constant DIAORACLE =
         0xCe5d1c4613f113fB8abFb9415e1F0D947B120Bf2;
 
-    address internal constant deployer = 0x666256650e4eA279861979CA9ddC0153A3004808;
-    
-    address internal constant makerAuctionOracle = 0xFB6A63B465D04151DE94C5E3F52ACC0C37EF5003;
+    address internal constant deployer =
+        0x666256650e4eA279861979CA9ddC0153A3004808;
 
-    address internal constant pause = 0xbE286431454714F511008713973d3B053A2d38f3;
+    address internal constant makerAuctionOracle =
+        0xFB6A63B465D04151DE94C5E3F52ACC0C37EF5003;
 
-    address internal constant chief = 0x21EDd6f4542423737075E674624C0F6596c629C1;
+    address internal constant pause =
+        0xbE286431454714F511008713973d3B053A2d38f3;
+
+    address internal constant chief =
+        0x21EDd6f4542423737075E674624C0F6596c629C1;
 
     // The main function that defines the actions to be executed.
-    function actions() public override {  
+    function actions() public override {
+        /**************************************/
+        /*** System Risk Parameters Changes ***/
+        /**************************************/
         // Sets the amount of MKR to 10 in debt auction
         DssExecLib.setDebtAuctionMKRAmount(10);
-        // Sets the amount of DAI to be controled by a contract. will change to 1000 usd value of dai debt auction.    
+        // Sets the amount of DAI to be controled by a contract. will change to 1000 usd value of dai debt auction.
         DssExecLib.authorize(DssExecLib.vow(), makerAuctionOracle);
-        MedianLike(makerAuctionOracle).deny(deployer);
         // Sets the duration of the debt auction to 3600 seconds (1 hour).
         DssExecLib.setDebtAuctionDuration(3600);
         // Sets the bid duration of the debt auction to 1800 seconds (30 minutes).
         DssExecLib.setDebtAuctionBidDuration(1800);
         // Sets the global debt ceiling to 5,000,000,000 DAI.
         DssExecLib.setGlobalDebtCeiling(0);
+
+        /********************************/
+        /*** DsPause Ownership Change ***/
+        /********************************/
+
+        PauseLike(pause).setOwner(address(0));
+
+        /**********************/
+        /*** Authorizations ***/
+        /**********************/
+
         // Authorizes the DIA Oracle to interact with the Spotter.
         DssExecLib.authorize(DssExecLib.spotter(), DIAORACLE);
-        // // Removes the owner of the pause contract.
-        PauseLike(pause).setOwner(
-            address(0)
-        );
+
         // sets the pause authority to the new chief
         DssExecLib.setAuthority(pause, chief);
-    
-        // adds the new chief to the changelog
-        DssExecLib.setChangelogAddress('CHIEF', chief);
+
+        /**********************/
+        /*** Median changes ***/
+        /**********************/
+
         // Changes the medianizer for pip1 to median1.
         OracleLike(pip1).change(median1);
         // Adds the source of pip1 to the whitelist.
         DssExecLib.addReaderToWhitelistCall(OracleLike(pip1).src(), pip1);
-        // removes deployer
-        MedianLike(median1).deny(deployer);
+
         // Changes the medianizer for pip2 to median2.
         OracleLike(pip2).change(median2);
         // Adds the source of pip2 to the whitelist.
         DssExecLib.addReaderToWhitelistCall(OracleLike(pip2).src(), pip2);
-        // removes deployer
-        MedianLike(median2).deny(deployer);
+
+        // Changes the medianizer for pip4 to median4.
+        OracleLike(pip4).change(median4);
+        // Adds the source of pip4 to the whitelist.
+        DssExecLib.addReaderToWhitelistCall(OracleLike(pip4).src(), pip4);
+
+        // // Changes the medianizer for pip6 to median6.
+        OracleLike(pip6).change(median6);
+        // Adds the source of pip6 to the whitelist.
+        DssExecLib.addReaderToWhitelistCall(OracleLike(pip6).src(), pip6);
+        // Changes the medianizer for pip7 to median7.
+        OracleLike(pip7).change(median7);
+
+        // Adds the source of pip7 to the whitelist.
+        DssExecLib.addReaderToWhitelistCall(OracleLike(pip7).src(), pip7);
+        // Changes the medianizer for pip8 to median8.
+        OracleLike(pip8).change(median8);
+
+        // Adds the source of pip8 to the whitelist.
+        DssExecLib.addReaderToWhitelistCall(OracleLike(pip8).src(), pip8);
+        // Changes the medianizer for pip9 to median9.
+        OracleLike(pip9).change(median9);
+
+        // Adds the source of pip9 to the whitelist.
+        DssExecLib.addReaderToWhitelistCall(OracleLike(pip9).src(), pip9);
+
+        // Changes the medianizer for pip11 to median11.
+        OracleLike(pip11).change(median11);
+        // Adds the source of pip11 to the whitelist.
+        DssExecLib.addReaderToWhitelistCall(OracleLike(pip11).src(), pip11);
+
+        // Changes the medianizer for pip12 to median12.
+        OracleLike(pip12).change(median12);
+        // Adds the source of pip12 to the whitelist.
+        DssExecLib.addReaderToWhitelistCall(OracleLike(pip12).src(), pip12);
+
+        // Changes the medianizer for pip13 to median13.
+        OracleLike(pip13).change(median13);
+        // Adds the source of pip13 to the whitelist.
+        DssExecLib.addReaderToWhitelistCall(OracleLike(pip13).src(), pip13);
+        // Changes the medianizer for pip14 to median14.
+        OracleLike(pip14).change(median14);
+
+        // Adds the source of pip14 to the whitelist.
+        DssExecLib.addReaderToWhitelistCall(OracleLike(pip14).src(), pip14);
+        // Changes the medianizer for pip15 to median15.
+        OracleLike(pip15).change(median15);
+
+        // Adds the source of pip15 to the whitelist.
+        DssExecLib.addReaderToWhitelistCall(OracleLike(pip15).src(), pip15);
+        // Sets the pip for the GUSD-A collateral type in the Spotter.
+
+        // Changes the medianizer for pip17 to median17.
+        OracleLike(pip17).change(median17);
+        // Adds the source of pip17 to the whitelist.
+        DssExecLib.addReaderToWhitelistCall(OracleLike(pip17).src(), pip17);
+
+        // Changes the medianizer for pip18 to median18.
+        OracleLike(pip18).change(median18);
+        // Adds the source of pip18 to the whitelist.
+        DssExecLib.addReaderToWhitelistCall(OracleLike(pip18).src(), pip18);
+
+        // Changes the medianizer for pip19 to median19.
+        OracleLike(pip19).change(median19);
+        // Adds the source of pip19 to the whitelist.
+        DssExecLib.addReaderToWhitelistCall(OracleLike(pip19).src(), pip19);
+
+        // Changes the medianizer for pip20 to median20.
+        OracleLike(pip20).change(median20);
+        // Adds the source of pip20 to the whitelist.
+        DssExecLib.addReaderToWhitelistCall(OracleLike(pip20).src(), pip20);
+
+        // Changes the medianizer for pip21 to median21.
+        OracleLike(pip21).change(median21);
+        // Adds the source of pip21 to the whitelist.
+        DssExecLib.addReaderToWhitelistCall(OracleLike(pip21).src(), pip21);
+
+        // Changes the medianizer for pip22 to median22.
+        OracleLike(pip22).change(median22);
+        // Adds the source of pip22 to the whitelist.
+        DssExecLib.addReaderToWhitelistCall(OracleLike(pip22).src(), pip22);
+
+        /*********************/
+        /*** Pip Additions ***/
+        /*********************/
+
         // Sets the pip for the USDC-A collateral type in the Spotter.
         DssExecLib.setContract(
             DssExecLib.spotter(),
@@ -232,14 +334,7 @@ contract DssSpellAction is DssAction {
         );
         // Adds the source of pip3 to the whitelist.
         DssExecLib.addReaderToWhitelistCall(OracleLike(pip3).src(), pip3);
-        // removes deployer
-        MedianLike(pip3).deny(deployer);
-        // Changes the medianizer for pip4 to median4.
-        OracleLike(pip4).change(median4);
-        // Adds the source of pip4 to the whitelist.
-        DssExecLib.addReaderToWhitelistCall(OracleLike(pip4).src(), pip4);
-        // removes deployer
-        MedianLike(median4).deny(deployer);
+
         // Sets the pip for the TUSD-A collateral type in the Spotter.
         DssExecLib.setContract(
             DssExecLib.spotter(),
@@ -269,30 +364,7 @@ contract DssSpellAction is DssAction {
         );
         // Adds the source of pip5 to the whitelist.
         DssExecLib.addReaderToWhitelistCall(OracleLike(pip5).src(), pip5);
-        // removes deployer
-        MedianLike(pip5).deny(deployer);
-        // // Changes the medianizer for pip6 to median6.
-        OracleLike(pip6).change(median6);
-        // Adds the source of pip6 to the whitelist.
-        DssExecLib.addReaderToWhitelistCall(OracleLike(pip6).src(), pip6);
-        // Changes the medianizer for pip7 to median7.
-        OracleLike(pip7).change(median7);
-        // removes deployer
-        MedianLike(median7).deny(deployer);
-        // Adds the source of pip7 to the whitelist.
-        DssExecLib.addReaderToWhitelistCall(OracleLike(pip7).src(), pip7);
-        // Changes the medianizer for pip8 to median8.
-        OracleLike(pip8).change(median8);
-        // removes deployer
-        MedianLike(median8).deny(deployer);
-        // Adds the source of pip8 to the whitelist.
-        DssExecLib.addReaderToWhitelistCall(OracleLike(pip8).src(), pip8);
-        // Changes the medianizer for pip9 to median9.
-        OracleLike(pip9).change(median9);
-        // removes deployer
-        MedianLike(median9).deny(deployer);
-        // Adds the source of pip9 to the whitelist.
-        DssExecLib.addReaderToWhitelistCall(OracleLike(pip9).src(), pip9);
+
         // Sets the pip for the PAXUSD-A collateral type in the Spotter.
         DssExecLib.setContract(
             DssExecLib.spotter(),
@@ -334,37 +406,6 @@ contract DssSpellAction is DssAction {
         );
         // Adds the source of pip10 to the whitelist.
         DssExecLib.addReaderToWhitelistCall(OracleLike(pip10).src(), pip10);
-        // removes deployer
-        MedianLike(pip10).deny(deployer);
-        // Changes the medianizer for pip11 to median11.
-        OracleLike(pip11).change(median11);
-        // Adds the source of pip11 to the whitelist.
-        DssExecLib.addReaderToWhitelistCall(OracleLike(pip11).src(), pip11);
-        // removes deployer
-        MedianLike(median11).deny(deployer);
-        // Changes the medianizer for pip12 to median12.
-        OracleLike(pip12).change(median12);
-        // Adds the source of pip12 to the whitelist.
-        DssExecLib.addReaderToWhitelistCall(OracleLike(pip12).src(), pip12);
-           // removes deployer
-        MedianLike(median12).deny(deployer);
-        // Changes the medianizer for pip13 to median13.
-        OracleLike(pip13).change(median13);
-        // Adds the source of pip13 to the whitelist.
-        DssExecLib.addReaderToWhitelistCall(OracleLike(pip13).src(), pip13);
-        // Changes the medianizer for pip14 to median14.
-        OracleLike(pip14).change(median14);
-        // removes deployer
-        MedianLike(median14).deny(deployer);
-        // Adds the source of pip14 to the whitelist.
-        DssExecLib.addReaderToWhitelistCall(OracleLike(pip14).src(), pip14);
-        // Changes the medianizer for pip15 to median15.
-        OracleLike(pip15).change(median15);
-          // removes deployer
-        MedianLike(median15).deny(deployer);
-        // Adds the source of pip15 to the whitelist.
-        DssExecLib.addReaderToWhitelistCall(OracleLike(pip15).src(), pip15);
-        // Sets the pip for the GUSD-A collateral type in the Spotter.
         DssExecLib.setContract(
             DssExecLib.spotter(),
             0x475553442d410000000000000000000000000000000000000000000000000000,
@@ -412,53 +453,46 @@ contract DssSpellAction is DssAction {
         );
         // Adds the source of pip16 to the whitelist.
         DssExecLib.addReaderToWhitelistCall(OracleLike(pip16).src(), pip16);
-             // removes deployer
-        MedianLike(pip16).deny(deployer);
-        // Changes the medianizer for pip17 to median17.
-        OracleLike(pip17).change(median17);
-        // Adds the source of pip17 to the whitelist.
-        DssExecLib.addReaderToWhitelistCall(OracleLike(pip17).src(), pip17);
-                 // removes deployer
-        MedianLike(pip17).deny(deployer);
-        // Changes the medianizer for pip18 to median18.
-        OracleLike(pip18).change(median18);
-        // Adds the source of pip18 to the whitelist.
-        DssExecLib.addReaderToWhitelistCall(OracleLike(pip18).src(), pip18);
-                    // removes deployer
-        MedianLike(median18).deny(deployer);
-        // Changes the medianizer for pip19 to median19.
-        OracleLike(pip19).change(median19);
-        // Adds the source of pip19 to the whitelist.
-        DssExecLib.addReaderToWhitelistCall(OracleLike(pip19).src(), pip19);
-                         // removes deployer
-        MedianLike(median19).deny(deployer);
-        // Changes the medianizer for pip20 to median20.
-        OracleLike(pip20).change(median20);
-        // Adds the source of pip20 to the whitelist.
-        DssExecLib.addReaderToWhitelistCall(OracleLike(pip20).src(), pip20);
-        // removes deployer
-        MedianLike(median20).deny(deployer);
-        // Changes the medianizer for pip21 to median21.
-        OracleLike(pip21).change(median21);
-        // Adds the source of pip21 to the whitelist.
-        DssExecLib.addReaderToWhitelistCall(OracleLike(pip21).src(), pip21);
-           // removes deployer
-        MedianLike(median21).deny(deployer);
-        // Changes the medianizer for pip22 to median22.
-        OracleLike(pip22).change(median22);
-        // Adds the source of pip22 to the whitelist.
-        DssExecLib.addReaderToWhitelistCall(OracleLike(pip22).src(), pip22);
-            // removes deployer
+
+        /***********************/
+        /*** Deployer revoke ***/
+        /***********************/
+
         MedianLike(median22).deny(deployer);
         MedianLike(DIAORACLE).deny(deployer);
+        MedianLike(makerAuctionOracle).deny(deployer);
+        MedianLike(median21).deny(deployer);
+        MedianLike(median20).deny(deployer);
+        MedianLike(median19).deny(deployer);
+        MedianLike(median18).deny(deployer);
+        MedianLike(pip17).deny(deployer);
+        MedianLike(pip16).deny(deployer);
+        MedianLike(median15).deny(deployer);
+        MedianLike(median14).deny(deployer);
+        MedianLike(median12).deny(deployer);
+        MedianLike(median11).deny(deployer);
+        MedianLike(pip10).deny(deployer);
+        MedianLike(median9).deny(deployer);
+        MedianLike(median8).deny(deployer);
+        MedianLike(median7).deny(deployer);
+        MedianLike(median6).deny(deployer);
+        MedianLike(pip5).deny(deployer);
+        MedianLike(median4).deny(deployer);
+        MedianLike(pip3).deny(deployer);
+        MedianLike(median2).deny(deployer);
+        MedianLike(median1).deny(deployer);
 
         // // Sets the changelog version to 1.15.0.
-         DssExecLib.setChangelogVersion("1.15.0");
+        DssExecLib.setChangelogVersion("1.15.0");
+        // adds the new chief to the changelog
+        DssExecLib.setChangelogAddress("CHIEF", chief);
     }
 }
 
 // DssSpell contract is the main contract that executes the actions defined in DssSpellAction.
 contract DssSpell is DssExec {
     // Constructor that initializes the DssExec contract and deploys a new DssSpellAction contract.
-    constructor() DssExec(block.timestamp + 180 days, address(new DssSpellAction())) {}
+    constructor()
+        DssExec(block.timestamp + 180 days, address(new DssSpellAction()))
+    {}
 }
