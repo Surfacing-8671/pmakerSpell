@@ -26,27 +26,25 @@ import type {
 export interface DSPauseInterface extends Interface {
   getFunction(
     nameOrSignature:
-      | "setOwner"
+      | "authority"
+      | "delay"
       | "drop"
       | "exec"
-      | "plot"
-      | "delay"
-      | "setAuthority"
       | "owner"
       | "plans"
-      | "authority"
-      | "setDelay"
+      | "plot"
       | "proxy"
+      | "setAuthority"
+      | "setDelay"
+      | "setOwner"
   ): FunctionFragment;
 
   getEvent(
     nameOrSignatureOrTopic: "LogNote" | "LogSetAuthority" | "LogSetOwner"
   ): EventFragment;
 
-  encodeFunctionData(
-    functionFragment: "setOwner",
-    values: [AddressLike]
-  ): string;
+  encodeFunctionData(functionFragment: "authority", values?: undefined): string;
+  encodeFunctionData(functionFragment: "delay", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "drop",
     values: [AddressLike, BytesLike, BytesLike, BigNumberish]
@@ -55,38 +53,40 @@ export interface DSPauseInterface extends Interface {
     functionFragment: "exec",
     values: [AddressLike, BytesLike, BytesLike, BigNumberish]
   ): string;
+  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
+  encodeFunctionData(functionFragment: "plans", values: [BytesLike]): string;
   encodeFunctionData(
     functionFragment: "plot",
     values: [AddressLike, BytesLike, BytesLike, BigNumberish]
   ): string;
-  encodeFunctionData(functionFragment: "delay", values?: undefined): string;
+  encodeFunctionData(functionFragment: "proxy", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "setAuthority",
     values: [AddressLike]
   ): string;
-  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
-  encodeFunctionData(functionFragment: "plans", values: [BytesLike]): string;
-  encodeFunctionData(functionFragment: "authority", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "setDelay",
     values: [BigNumberish]
   ): string;
-  encodeFunctionData(functionFragment: "proxy", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "setOwner",
+    values: [AddressLike]
+  ): string;
 
-  decodeFunctionResult(functionFragment: "setOwner", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "authority", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "delay", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "drop", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "exec", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "plans", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "plot", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "delay", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "proxy", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "setAuthority",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "plans", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "authority", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "setDelay", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "proxy", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "setOwner", data: BytesLike): Result;
 }
 
 export namespace LogNoteEvent {
@@ -187,7 +187,9 @@ export interface DSPause extends BaseContract {
     event?: TCEvent
   ): Promise<this>;
 
-  setOwner: TypedContractMethod<[owner_: AddressLike], [void], "nonpayable">;
+  authority: TypedContractMethod<[], [string], "view">;
+
+  delay: TypedContractMethod<[], [bigint], "view">;
 
   drop: TypedContractMethod<
     [usr: AddressLike, tag: BytesLike, fax: BytesLike, eta: BigNumberish],
@@ -201,13 +203,17 @@ export interface DSPause extends BaseContract {
     "nonpayable"
   >;
 
+  owner: TypedContractMethod<[], [string], "view">;
+
+  plans: TypedContractMethod<[arg0: BytesLike], [boolean], "view">;
+
   plot: TypedContractMethod<
     [usr: AddressLike, tag: BytesLike, fax: BytesLike, eta: BigNumberish],
     [void],
     "nonpayable"
   >;
 
-  delay: TypedContractMethod<[], [bigint], "view">;
+  proxy: TypedContractMethod<[], [string], "view">;
 
   setAuthority: TypedContractMethod<
     [authority_: AddressLike],
@@ -215,23 +221,20 @@ export interface DSPause extends BaseContract {
     "nonpayable"
   >;
 
-  owner: TypedContractMethod<[], [string], "view">;
-
-  plans: TypedContractMethod<[arg0: BytesLike], [boolean], "view">;
-
-  authority: TypedContractMethod<[], [string], "view">;
-
   setDelay: TypedContractMethod<[delay_: BigNumberish], [void], "nonpayable">;
 
-  proxy: TypedContractMethod<[], [string], "view">;
+  setOwner: TypedContractMethod<[owner_: AddressLike], [void], "nonpayable">;
 
   getFunction<T extends ContractMethod = ContractMethod>(
     key: string | FunctionFragment
   ): T;
 
   getFunction(
-    nameOrSignature: "setOwner"
-  ): TypedContractMethod<[owner_: AddressLike], [void], "nonpayable">;
+    nameOrSignature: "authority"
+  ): TypedContractMethod<[], [string], "view">;
+  getFunction(
+    nameOrSignature: "delay"
+  ): TypedContractMethod<[], [bigint], "view">;
   getFunction(
     nameOrSignature: "drop"
   ): TypedContractMethod<
@@ -247,6 +250,12 @@ export interface DSPause extends BaseContract {
     "nonpayable"
   >;
   getFunction(
+    nameOrSignature: "owner"
+  ): TypedContractMethod<[], [string], "view">;
+  getFunction(
+    nameOrSignature: "plans"
+  ): TypedContractMethod<[arg0: BytesLike], [boolean], "view">;
+  getFunction(
     nameOrSignature: "plot"
   ): TypedContractMethod<
     [usr: AddressLike, tag: BytesLike, fax: BytesLike, eta: BigNumberish],
@@ -254,26 +263,17 @@ export interface DSPause extends BaseContract {
     "nonpayable"
   >;
   getFunction(
-    nameOrSignature: "delay"
-  ): TypedContractMethod<[], [bigint], "view">;
+    nameOrSignature: "proxy"
+  ): TypedContractMethod<[], [string], "view">;
   getFunction(
     nameOrSignature: "setAuthority"
   ): TypedContractMethod<[authority_: AddressLike], [void], "nonpayable">;
   getFunction(
-    nameOrSignature: "owner"
-  ): TypedContractMethod<[], [string], "view">;
-  getFunction(
-    nameOrSignature: "plans"
-  ): TypedContractMethod<[arg0: BytesLike], [boolean], "view">;
-  getFunction(
-    nameOrSignature: "authority"
-  ): TypedContractMethod<[], [string], "view">;
-  getFunction(
     nameOrSignature: "setDelay"
   ): TypedContractMethod<[delay_: BigNumberish], [void], "nonpayable">;
   getFunction(
-    nameOrSignature: "proxy"
-  ): TypedContractMethod<[], [string], "view">;
+    nameOrSignature: "setOwner"
+  ): TypedContractMethod<[owner_: AddressLike], [void], "nonpayable">;
 
   getEvent(
     key: "LogNote"

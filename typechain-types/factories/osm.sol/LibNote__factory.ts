@@ -17,26 +17,31 @@ const _abi = [
     inputs: [
       {
         indexed: true,
+        internalType: "bytes4",
         name: "sig",
         type: "bytes4",
       },
       {
         indexed: true,
+        internalType: "address",
         name: "usr",
         type: "address",
       },
       {
         indexed: true,
+        internalType: "bytes32",
         name: "arg1",
         type: "bytes32",
       },
       {
         indexed: true,
+        internalType: "bytes32",
         name: "arg2",
         type: "bytes32",
       },
       {
         indexed: false,
+        internalType: "bytes",
         name: "data",
         type: "bytes",
       },
@@ -47,7 +52,7 @@ const _abi = [
 ] as const;
 
 const _bytecode =
-  "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a72305820f9c56cc4090fab9606ca7dd3c032ae9b3912ff386ce7140e311f84e1252aa8a00029";
+  "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a7231582019df501d047c0ed8cf35bd006dd84f1e6ce9af05b5c02bbbc18a7d94cc55cc9164736f6c63430005110032";
 
 type LibNoteConstructorParams =
   | [signer?: Signer]

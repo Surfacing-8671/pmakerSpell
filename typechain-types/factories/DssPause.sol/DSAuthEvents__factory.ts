@@ -20,6 +20,7 @@ const _abi = [
     inputs: [
       {
         indexed: true,
+        internalType: "address",
         name: "authority",
         type: "address",
       },
@@ -32,6 +33,7 @@ const _abi = [
     inputs: [
       {
         indexed: true,
+        internalType: "address",
         name: "owner",
         type: "address",
       },
@@ -42,7 +44,7 @@ const _abi = [
 ] as const;
 
 const _bytecode =
-  "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a723058200279e6e0223b91ee9e8ad9b85bd7a58cc8027d71b5a8ec50d08d9b401aad4ac60029";
+  "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a72315820ed7f9442d8fdedeee1045d6d9afbf091214d6f7564ef42cac196050ce5e315aa64736f6c63430005110032";
 
 type DSAuthEventsConstructorParams =
   | [signer?: Signer]

@@ -218,10 +218,6 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Authorizable__factory>;
     getContractFactory(
-      name: "Drippable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Drippable__factory>;
-    getContractFactory(
       name: "DssSpell",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.DssSpell__factory>;
@@ -229,14 +225,6 @@ declare module "hardhat/types/runtime" {
       name: "DssSpellAction",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.DssSpellAction__factory>;
-    getContractFactory(
-      name: "GemLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.GemLike__factory>;
-    getContractFactory(
-      name: "IlkRegLike",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IlkRegLike__factory>;
     getContractFactory(
       name: "MedianLike",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -298,10 +286,6 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.DssVat__factory>;
     getContractFactory(
-      name: "ERC20",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ERC20__factory>;
-    getContractFactory(
       name: "Fileable",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Fileable__factory>;
@@ -309,10 +293,6 @@ declare module "hardhat/types/runtime" {
       name: "IAMLike",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IAMLike__factory>;
-    getContractFactory(
-      name: "Initializable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Initializable__factory>;
     getContractFactory(
       name: "JoinLike",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -634,11 +614,6 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.Authorizable>;
     getContractAt(
-      name: "Drippable",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Drippable>;
-    getContractAt(
       name: "DssSpell",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
@@ -648,16 +623,6 @@ declare module "hardhat/types/runtime" {
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.DssSpellAction>;
-    getContractAt(
-      name: "GemLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.GemLike>;
-    getContractAt(
-      name: "IlkRegLike",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.IlkRegLike>;
     getContractAt(
       name: "MedianLike",
       address: string | ethers.Addressable,
@@ -734,11 +699,6 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.DssVat>;
     getContractAt(
-      name: "ERC20",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ERC20>;
-    getContractAt(
       name: "Fileable",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
@@ -748,11 +708,6 @@ declare module "hardhat/types/runtime" {
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.IAMLike>;
-    getContractAt(
-      name: "Initializable",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Initializable>;
     getContractAt(
       name: "JoinLike",
       address: string | ethers.Addressable,
@@ -1039,10 +994,6 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.Authorizable>;
     deployContract(
-      name: "Drippable",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Drippable>;
-    deployContract(
       name: "DssSpell",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.DssSpell>;
@@ -1050,14 +1001,6 @@ declare module "hardhat/types/runtime" {
       name: "DssSpellAction",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.DssSpellAction>;
-    deployContract(
-      name: "GemLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.GemLike>;
-    deployContract(
-      name: "IlkRegLike",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.IlkRegLike>;
     deployContract(
       name: "MedianLike",
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -1119,10 +1062,6 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.DssVat>;
     deployContract(
-      name: "ERC20",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.ERC20>;
-    deployContract(
       name: "Fileable",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.Fileable>;
@@ -1130,10 +1069,6 @@ declare module "hardhat/types/runtime" {
       name: "IAMLike",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.IAMLike>;
-    deployContract(
-      name: "Initializable",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Initializable>;
     deployContract(
       name: "JoinLike",
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -1455,11 +1390,6 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.Authorizable>;
     deployContract(
-      name: "Drippable",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Drippable>;
-    deployContract(
       name: "DssSpell",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -1469,16 +1399,6 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.DssSpellAction>;
-    deployContract(
-      name: "GemLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.GemLike>;
-    deployContract(
-      name: "IlkRegLike",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.IlkRegLike>;
     deployContract(
       name: "MedianLike",
       args: any[],
@@ -1555,11 +1475,6 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.DssVat>;
     deployContract(
-      name: "ERC20",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.ERC20>;
-    deployContract(
       name: "Fileable",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -1569,11 +1484,6 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.IAMLike>;
-    deployContract(
-      name: "Initializable",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Initializable>;
     deployContract(
       name: "JoinLike",
       args: any[],

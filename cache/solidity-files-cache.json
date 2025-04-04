@@ -114,7 +114,7 @@
       "contentHash": "fbf6c5c2dd41ff6fdd0b5a9e6fe4f56f",
       "sourceName": "contracts/DssPause.sol",
       "solcConfig": {
-        "version": "0.5.0",
+        "version": "0.5.17",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -234,7 +234,7 @@
       "contentHash": "7381780bf1ae925da52d1fb73f83f1d7",
       "sourceName": "contracts/osm.sol",
       "solcConfig": {
-        "version": "0.5.0",
+        "version": "0.5.17",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -591,8 +591,8 @@
       ]
     },
     "/home/surfacing8671/Desktop/dss/contracts/Spell/src/DssExecLib.sol": {
-      "lastModificationDate": 1743423309410,
-      "contentHash": "8705794ff05696d95aeb5463496a411d",
+      "lastModificationDate": 1743810807703,
+      "contentHash": "69dac1cd6039df2adae88da8d7297528",
       "sourceName": "contracts/Spell/src/DssExecLib.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -632,10 +632,8 @@
         "Drippable",
         "DssExecLib",
         "DssVat",
-        "ERC20",
         "Fileable",
         "IAMLike",
-        "Initializable",
         "JoinLike",
         "LerpFactoryLike",
         "LerpLike",
@@ -720,8 +718,8 @@
       ]
     },
     "/home/surfacing8671/Desktop/dss/contracts/Spell/DssSpell.sol": {
-      "lastModificationDate": 1743650182061,
-      "contentHash": "83e4af5f35aae18706661ab4cc3000fd",
+      "lastModificationDate": 1743810901498,
+      "contentHash": "e3cef71190a3635942815a6a27650f13",
       "sourceName": "contracts/Spell/DssSpell.sol",
       "solcConfig": {
         "version": "0.8.16",

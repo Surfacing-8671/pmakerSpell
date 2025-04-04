@@ -26,46 +26,46 @@ import type {
 export interface DSValueInterface extends Interface {
   getFunction(
     nameOrSignature:
-      | "setOwner"
+      | "authority"
+      | "owner"
+      | "peek"
       | "poke"
       | "read"
-      | "peek"
       | "setAuthority"
-      | "owner"
+      | "setOwner"
       | "void"
-      | "authority"
   ): FunctionFragment;
 
   getEvent(
     nameOrSignatureOrTopic: "LogNote" | "LogSetAuthority" | "LogSetOwner"
   ): EventFragment;
 
+  encodeFunctionData(functionFragment: "authority", values?: undefined): string;
+  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
+  encodeFunctionData(functionFragment: "peek", values?: undefined): string;
+  encodeFunctionData(functionFragment: "poke", values: [BytesLike]): string;
+  encodeFunctionData(functionFragment: "read", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "setAuthority",
+    values: [AddressLike]
+  ): string;
   encodeFunctionData(
     functionFragment: "setOwner",
     values: [AddressLike]
   ): string;
-  encodeFunctionData(functionFragment: "poke", values: [BytesLike]): string;
-  encodeFunctionData(functionFragment: "read", values?: undefined): string;
-  encodeFunctionData(functionFragment: "peek", values?: undefined): string;
-  encodeFunctionData(
-    functionFragment: "setAuthority",
-    values: [AddressLike]
-  ): string;
-  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
   encodeFunctionData(functionFragment: "void", values?: undefined): string;
-  encodeFunctionData(functionFragment: "authority", values?: undefined): string;
 
-  decodeFunctionResult(functionFragment: "setOwner", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "authority", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "peek", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "poke", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "read", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "peek", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "setAuthority",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "setOwner", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "void", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "authority", data: BytesLike): Result;
 }
 
 export namespace LogNoteEvent {
@@ -166,13 +166,15 @@ export interface DSValue extends BaseContract {
     event?: TCEvent
   ): Promise<this>;
 
-  setOwner: TypedContractMethod<[owner_: AddressLike], [void], "nonpayable">;
+  authority: TypedContractMethod<[], [string], "view">;
+
+  owner: TypedContractMethod<[], [string], "view">;
+
+  peek: TypedContractMethod<[], [[string, boolean]], "view">;
 
   poke: TypedContractMethod<[wut: BytesLike], [void], "nonpayable">;
 
   read: TypedContractMethod<[], [string], "view">;
-
-  peek: TypedContractMethod<[], [[string, boolean]], "view">;
 
   setAuthority: TypedContractMethod<
     [authority_: AddressLike],
@@ -180,19 +182,23 @@ export interface DSValue extends BaseContract {
     "nonpayable"
   >;
 
-  owner: TypedContractMethod<[], [string], "view">;
+  setOwner: TypedContractMethod<[owner_: AddressLike], [void], "nonpayable">;
 
   void: TypedContractMethod<[], [void], "nonpayable">;
-
-  authority: TypedContractMethod<[], [string], "view">;
 
   getFunction<T extends ContractMethod = ContractMethod>(
     key: string | FunctionFragment
   ): T;
 
   getFunction(
-    nameOrSignature: "setOwner"
-  ): TypedContractMethod<[owner_: AddressLike], [void], "nonpayable">;
+    nameOrSignature: "authority"
+  ): TypedContractMethod<[], [string], "view">;
+  getFunction(
+    nameOrSignature: "owner"
+  ): TypedContractMethod<[], [string], "view">;
+  getFunction(
+    nameOrSignature: "peek"
+  ): TypedContractMethod<[], [[string, boolean]], "view">;
   getFunction(
     nameOrSignature: "poke"
   ): TypedContractMethod<[wut: BytesLike], [void], "nonpayable">;
@@ -200,20 +206,14 @@ export interface DSValue extends BaseContract {
     nameOrSignature: "read"
   ): TypedContractMethod<[], [string], "view">;
   getFunction(
-    nameOrSignature: "peek"
-  ): TypedContractMethod<[], [[string, boolean]], "view">;
-  getFunction(
     nameOrSignature: "setAuthority"
   ): TypedContractMethod<[authority_: AddressLike], [void], "nonpayable">;
   getFunction(
-    nameOrSignature: "owner"
-  ): TypedContractMethod<[], [string], "view">;
+    nameOrSignature: "setOwner"
+  ): TypedContractMethod<[owner_: AddressLike], [void], "nonpayable">;
   getFunction(
     nameOrSignature: "void"
   ): TypedContractMethod<[], [void], "nonpayable">;
-  getFunction(
-    nameOrSignature: "authority"
-  ): TypedContractMethod<[], [string], "view">;
 
   getEvent(
     key: "LogNote"

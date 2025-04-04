@@ -21,16 +21,16 @@ import type {
 } from "../common";
 
 export interface DSPauseProxyInterface extends Interface {
-  getFunction(nameOrSignature: "owner" | "exec"): FunctionFragment;
+  getFunction(nameOrSignature: "exec" | "owner"): FunctionFragment;
 
-  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "exec",
     values: [AddressLike, BytesLike]
   ): string;
+  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
 
-  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "exec", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
 }
 
 export interface DSPauseProxy extends BaseContract {
@@ -76,21 +76,18 @@ export interface DSPauseProxy extends BaseContract {
     event?: TCEvent
   ): Promise<this>;
 
-  owner: TypedContractMethod<[], [string], "view">;
-
   exec: TypedContractMethod<
     [usr: AddressLike, fax: BytesLike],
     [string],
     "nonpayable"
   >;
 
+  owner: TypedContractMethod<[], [string], "view">;
+
   getFunction<T extends ContractMethod = ContractMethod>(
     key: string | FunctionFragment
   ): T;
 
-  getFunction(
-    nameOrSignature: "owner"
-  ): TypedContractMethod<[], [string], "view">;
   getFunction(
     nameOrSignature: "exec"
   ): TypedContractMethod<
@@ -98,6 +95,9 @@ export interface DSPauseProxy extends BaseContract {
     [string],
     "nonpayable"
   >;
+  getFunction(
+    nameOrSignature: "owner"
+  ): TypedContractMethod<[], [string], "view">;
 
   filters: {};
 }

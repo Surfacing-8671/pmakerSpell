@@ -458,29 +458,29 @@ contract DssSpellAction is DssAction {
         /*** Deployer revoke ***/
         /***********************/
 
-        MedianLike(median22).deny(deployer);
-        MedianLike(DIAORACLE).deny(deployer);
-        MedianLike(makerAuctionOracle).deny(deployer);
-        MedianLike(median21).deny(deployer);
-        MedianLike(median20).deny(deployer);
-        MedianLike(median19).deny(deployer);
-        MedianLike(median18).deny(deployer);
-        MedianLike(pip17).deny(deployer);
-        MedianLike(pip16).deny(deployer);
-        MedianLike(median15).deny(deployer);
-        MedianLike(median14).deny(deployer);
-        MedianLike(median12).deny(deployer);
-        MedianLike(median11).deny(deployer);
-        MedianLike(pip10).deny(deployer);
-        MedianLike(median9).deny(deployer);
-        MedianLike(median8).deny(deployer);
-        MedianLike(median7).deny(deployer);
-        MedianLike(median6).deny(deployer);
-        MedianLike(pip5).deny(deployer);
-        MedianLike(median4).deny(deployer);
-        MedianLike(pip3).deny(deployer);
-        MedianLike(median2).deny(deployer);
-        MedianLike(median1).deny(deployer);
+        // MedianLike(median22).deny(deployer);
+        // MedianLike(DIAORACLE).deny(deployer);
+        // MedianLike(makerAuctionOracle).deny(deployer);
+        // MedianLike(median21).deny(deployer);
+        // MedianLike(median20).deny(deployer);
+        // MedianLike(median19).deny(deployer);
+        // MedianLike(median18).deny(deployer);
+        // MedianLike(pip17).deny(deployer);
+        // MedianLike(pip16).deny(deployer);
+        // MedianLike(median15).deny(deployer);
+        // MedianLike(median14).deny(deployer);
+        // MedianLike(median12).deny(deployer);
+        // MedianLike(median11).deny(deployer);
+        // MedianLike(pip10).deny(deployer);
+        // MedianLike(median9).deny(deployer);
+        // MedianLike(median8).deny(deployer);
+        // MedianLike(median7).deny(deployer);
+        // MedianLike(median6).deny(deployer);
+        // MedianLike(pip5).deny(deployer);
+        // MedianLike(median4).deny(deployer);
+        // MedianLike(pip3).deny(deployer);
+        // MedianLike(median2).deny(deployer);
+        // MedianLike(median1).deny(deployer);
 
         // // Sets the changelog version to 1.15.0.
         DssExecLib.setChangelogVersion("1.15.0");

@@ -13,14 +13,17 @@ const _abi = [
     constant: true,
     inputs: [
       {
+        internalType: "address",
         name: "src",
         type: "address",
       },
       {
+        internalType: "address",
         name: "dst",
         type: "address",
       },
       {
+        internalType: "bytes4",
         name: "sig",
         type: "bytes4",
       },
@@ -28,6 +31,7 @@ const _abi = [
     name: "canCall",
     outputs: [
       {
+        internalType: "bool",
         name: "",
         type: "bool",
       },

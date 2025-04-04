@@ -21,9 +21,7 @@ pragma solidity ^0.8.16;
 
 import { CollateralOpts } from "./CollateralOpts.sol";
 
-interface Initializable {
-    function init(bytes32) external;
-}
+
 
 interface Authorizable {
     function rely(address) external;
@@ -47,9 +45,7 @@ interface Pricing {
     function poke(bytes32) external;
 }
 
-interface ERC20 {
-    function decimals() external returns (uint8);
-}
+
 
 interface DssVat {
     function hope(address) external;
@@ -610,134 +606,134 @@ library DssExecLib {
         @param _amount The amount to increase in DAI (ex. 10m DAI amount == 10000000)
         @param _global If true, increases the global debt ceiling by _amount
     */
-    function increaseIlkDebtCeiling(bytes32 _ilk, uint256 _amount, bool _global) public {
-        require(_amount < WAD);  // "LibDssExec/incorrect-ilk-line-precision"
-        address _vat = vat();
-        (,,,uint256 line_,) = DssVat(_vat).ilks(_ilk);
-        setValue(_vat, _ilk, "line", line_ + _amount * RAD);
-        if (_global) { increaseGlobalDebtCeiling(_amount); }
-    }
-    /**
-        @dev Decrease a collateral debt ceiling. Amount will be converted to the correct internal precision.
-        @param _ilk    The ilk to update (ex. bytes32("ETH-A"))
-        @param _amount The amount to decrease in DAI (ex. 10m DAI amount == 10000000)
-        @param _global If true, decreases the global debt ceiling by _amount
-    */
-    function decreaseIlkDebtCeiling(bytes32 _ilk, uint256 _amount, bool _global) public {
-        require(_amount < WAD);  // "LibDssExec/incorrect-ilk-line-precision"
-        address _vat = vat();
-        (,,,uint256 line_,) = DssVat(_vat).ilks(_ilk);
-        setValue(_vat, _ilk, "line", line_ - _amount * RAD);
-        if (_global) { decreaseGlobalDebtCeiling(_amount); }
-    }
-    /**
-        @dev Set a RWA collateral debt ceiling by specifying its new oracle price.
-        @param _ilk      The ilk to update (ex. bytes32("ETH-A"))
-        @param _ceiling  The new debt ceiling in natural units (e.g. set 10m DAI as 10_000_000)
-        @param _price    The new oracle price in natural units
-        @dev note: _price should enable DAI to be drawn over the loan period while taking into
-                   account the configured ink amount, interest rate and liquidation ratio
-        @dev note: _price * WAD should be greater than or equal to the current oracle price
-    */
-    function setRWAIlkDebtCeiling(bytes32 _ilk, uint256 _ceiling, uint256 _price) public {
-        require(_price < WAD);
-        setIlkDebtCeiling(_ilk, _ceiling);
-        RwaOracleLike(getChangelogAddress("MIP21_LIQUIDATION_ORACLE")).bump(_ilk, _price * WAD);
-        updateCollateralPrice(_ilk);
-    }
-    /**
-        @dev Set the parameters for an ilk in the "MCD_IAM_AUTO_LINE" auto-line
-        @param _ilk    The ilk to update (ex. bytes32("ETH-A"))
-        @param _amount The Maximum value (ex. 100m DAI amount == 100000000)
-        @param _gap    The amount of Dai per step (ex. 5m Dai == 5000000)
-        @param _ttl    The amount of time (in seconds)
-    */
-    function setIlkAutoLineParameters(bytes32 _ilk, uint256 _amount, uint256 _gap, uint256 _ttl) public {
-        require(_amount < WAD);  // "LibDssExec/incorrect-auto-line-amount-precision"
-        require(_gap < WAD);  // "LibDssExec/incorrect-auto-line-gap-precision"
-        IAMLike(autoLine()).setIlk(_ilk, _amount * RAD, _gap * RAD, _ttl);
-    }
-    /**
-        @dev Set the debt ceiling for an ilk in the "MCD_IAM_AUTO_LINE" auto-line without updating the time values
-        @param _ilk    The ilk to update (ex. bytes32("ETH-A"))
-        @param _amount The Maximum value (ex. 100m DAI amount == 100000000)
-    */
-    function setIlkAutoLineDebtCeiling(bytes32 _ilk, uint256 _amount) public {
-        address _autoLine = autoLine();
-        (, uint256 gap, uint48 ttl,,) = IAMLike(_autoLine).ilks(_ilk);
-        require(gap != 0 && ttl != 0);  // "LibDssExec/auto-line-not-configured"
-        IAMLike(_autoLine).setIlk(_ilk, _amount * RAD, uint256(gap), uint256(ttl));
-    }
-    /**
-        @dev Remove an ilk in the "MCD_IAM_AUTO_LINE" auto-line
-        @param _ilk    The ilk to remove (ex. bytes32("ETH-A"))
-    */
-    function removeIlkFromAutoLine(bytes32 _ilk) public {
-        IAMLike(autoLine()).remIlk(_ilk);
-    }
-    /**
-        @dev Set a collateral minimum vault amount. Amount will be converted to the correct internal precision.
-        @param _ilk    The ilk to update (ex. bytes32("ETH-A"))
-        @param _amount The amount to set in DAI (ex. 10m DAI amount == 10000000)
-    */
-    function setIlkMinVaultAmount(bytes32 _ilk, uint256 _amount) public {
-        require(_amount < WAD);  // "LibDssExec/incorrect-ilk-dust-precision"
-        (,, uint256 _hole,) = DogLike(dog()).ilks(_ilk);
-        require(_amount <= _hole / RAD);  // Ensure ilk.hole >= dust
-        setValue(vat(), _ilk, "dust", _amount * RAD);
-        (bool ok,) = clip(_ilk).call(abi.encodeWithSignature("upchost()")); ok;
-    }
-    /**
-        @dev Set a collateral liquidation penalty. Amount will be converted to the correct internal precision.
-        @dev Equation used for conversion is (1 + pct / 10,000) * WAD
-        @param _ilk    The ilk to update (ex. bytes32("ETH-A"))
-        @param _pct_bps    The pct, in basis points, to set in integer form (x100). (ex. 10.25% = 10.25 * 100 = 1025)
-    */
-    function setIlkLiquidationPenalty(bytes32 _ilk, uint256 _pct_bps) public {
-        require(_pct_bps < BPS_ONE_HUNDRED_PCT);  // "LibDssExec/incorrect-ilk-chop-precision"
-        setValue(dog(), _ilk, "chop", WAD + wdiv(_pct_bps, BPS_ONE_HUNDRED_PCT));
-        (bool ok,) = clip(_ilk).call(abi.encodeWithSignature("upchost()")); ok;
-    }
-    /**
-        @dev Set max DAI amount for liquidation per vault for collateral. Amount will be converted to the correct internal precision.
-        @param _ilk    The ilk to update (ex. bytes32("ETH-A"))
-        @param _amount The amount to set in DAI (ex. 10m DAI amount == 10000000)
-    */
-    function setIlkMaxLiquidationAmount(bytes32 _ilk, uint256 _amount) public {
-        require(_amount < WAD);  // "LibDssExec/incorrect-ilk-hole-precision"
-        setValue(dog(), _ilk, "hole", _amount * RAD);
-    }
-    /**
-        @dev Set a collateral liquidation ratio. Amount will be converted to the correct internal precision.
-        @dev Equation used for conversion is pct * RAY / 10,000
-        @param _ilk    The ilk to update (ex. bytes32("ETH-A"))
-        @param _pct_bps    The pct, in basis points, to set in integer form (x100). (ex. 150% = 150 * 100 = 15000)
-    */
-    function setIlkLiquidationRatio(bytes32 _ilk, uint256 _pct_bps) public {
-        require(_pct_bps < 10 * BPS_ONE_HUNDRED_PCT); // "LibDssExec/incorrect-ilk-mat-precision" // Fails if pct >= 1000%
-        require(_pct_bps >= BPS_ONE_HUNDRED_PCT); // the liquidation ratio has to be bigger or equal to 100%
-        setValue(spotter(), _ilk, "mat", rdiv(_pct_bps, BPS_ONE_HUNDRED_PCT));
-    }
-    /**
-        @dev Set an auction starting multiplier. Amount will be converted to the correct internal precision.
-        @dev Equation used for conversion is pct * RAY / 10,000
-        @param _ilk      The ilk to update (ex. bytes32("ETH-A"))
-        @param _pct_bps  The pct, in basis points, to set in integer form (x100). (ex. 1.3x starting multiplier = 130% = 13000)
-    */
-    function setStartingPriceMultiplicativeFactor(bytes32 _ilk, uint256 _pct_bps) public {
-        require(_pct_bps < 10 * BPS_ONE_HUNDRED_PCT); // "LibDssExec/incorrect-ilk-mat-precision" // Fails if gt 10x
-        require(_pct_bps >= BPS_ONE_HUNDRED_PCT); // fail if start price is less than OSM price
-        setValue(clip(_ilk), "buf", rdiv(_pct_bps, BPS_ONE_HUNDRED_PCT));
-    }
+    // function increaseIlkDebtCeiling(bytes32 _ilk, uint256 _amount, bool _global) public {
+    //     require(_amount < WAD);  // "LibDssExec/incorrect-ilk-line-precision"
+    //     address _vat = vat();
+    //     (,,,uint256 line_,) = DssVat(_vat).ilks(_ilk);
+    //     setValue(_vat, _ilk, "line", line_ + _amount * RAD);
+    //     if (_global) { increaseGlobalDebtCeiling(_amount); }
+    // }
+    // /**
+    //     @dev Decrease a collateral debt ceiling. Amount will be converted to the correct internal precision.
+    //     @param _ilk    The ilk to update (ex. bytes32("ETH-A"))
+    //     @param _amount The amount to decrease in DAI (ex. 10m DAI amount == 10000000)
+    //     @param _global If true, decreases the global debt ceiling by _amount
+    // */
+    // function decreaseIlkDebtCeiling(bytes32 _ilk, uint256 _amount, bool _global) public {
+    //     require(_amount < WAD);  // "LibDssExec/incorrect-ilk-line-precision"
+    //     address _vat = vat();
+    //     (,,,uint256 line_,) = DssVat(_vat).ilks(_ilk);
+    //     setValue(_vat, _ilk, "line", line_ - _amount * RAD);
+    //     if (_global) { decreaseGlobalDebtCeiling(_amount); }
+    // }
+    // /**
+    //     @dev Set a RWA collateral debt ceiling by specifying its new oracle price.
+    //     @param _ilk      The ilk to update (ex. bytes32("ETH-A"))
+    //     @param _ceiling  The new debt ceiling in natural units (e.g. set 10m DAI as 10_000_000)
+    //     @param _price    The new oracle price in natural units
+    //     @dev note: _price should enable DAI to be drawn over the loan period while taking into
+    //                account the configured ink amount, interest rate and liquidation ratio
+    //     @dev note: _price * WAD should be greater than or equal to the current oracle price
+    // */
+    // function setRWAIlkDebtCeiling(bytes32 _ilk, uint256 _ceiling, uint256 _price) public {
+    //     require(_price < WAD);
+    //     setIlkDebtCeiling(_ilk, _ceiling);
+    //     RwaOracleLike(getChangelogAddress("MIP21_LIQUIDATION_ORACLE")).bump(_ilk, _price * WAD);
+    //     updateCollateralPrice(_ilk);
+    // }
+    // /**
+    //     @dev Set the parameters for an ilk in the "MCD_IAM_AUTO_LINE" auto-line
+    //     @param _ilk    The ilk to update (ex. bytes32("ETH-A"))
+    //     @param _amount The Maximum value (ex. 100m DAI amount == 100000000)
+    //     @param _gap    The amount of Dai per step (ex. 5m Dai == 5000000)
+    //     @param _ttl    The amount of time (in seconds)
+    // */
+    // function setIlkAutoLineParameters(bytes32 _ilk, uint256 _amount, uint256 _gap, uint256 _ttl) public {
+    //     require(_amount < WAD);  // "LibDssExec/incorrect-auto-line-amount-precision"
+    //     require(_gap < WAD);  // "LibDssExec/incorrect-auto-line-gap-precision"
+    //     IAMLike(autoLine()).setIlk(_ilk, _amount * RAD, _gap * RAD, _ttl);
+    // }
+    // /**
+    //     @dev Set the debt ceiling for an ilk in the "MCD_IAM_AUTO_LINE" auto-line without updating the time values
+    //     @param _ilk    The ilk to update (ex. bytes32("ETH-A"))
+    //     @param _amount The Maximum value (ex. 100m DAI amount == 100000000)
+    // */
+    // function setIlkAutoLineDebtCeiling(bytes32 _ilk, uint256 _amount) public {
+    //     address _autoLine = autoLine();
+    //     (, uint256 gap, uint48 ttl,,) = IAMLike(_autoLine).ilks(_ilk);
+    //     require(gap != 0 && ttl != 0);  // "LibDssExec/auto-line-not-configured"
+    //     IAMLike(_autoLine).setIlk(_ilk, _amount * RAD, uint256(gap), uint256(ttl));
+    // }
+    // /**
+    //     @dev Remove an ilk in the "MCD_IAM_AUTO_LINE" auto-line
+    //     @param _ilk    The ilk to remove (ex. bytes32("ETH-A"))
+    // */
+    // function removeIlkFromAutoLine(bytes32 _ilk) public {
+    //     IAMLike(autoLine()).remIlk(_ilk);
+    // }
+    // /**
+    //     @dev Set a collateral minimum vault amount. Amount will be converted to the correct internal precision.
+    //     @param _ilk    The ilk to update (ex. bytes32("ETH-A"))
+    //     @param _amount The amount to set in DAI (ex. 10m DAI amount == 10000000)
+    // */
+    // function setIlkMinVaultAmount(bytes32 _ilk, uint256 _amount) public {
+    //     require(_amount < WAD);  // "LibDssExec/incorrect-ilk-dust-precision"
+    //     (,, uint256 _hole,) = DogLike(dog()).ilks(_ilk);
+    //     require(_amount <= _hole / RAD);  // Ensure ilk.hole >= dust
+    //     setValue(vat(), _ilk, "dust", _amount * RAD);
+    //     (bool ok,) = clip(_ilk).call(abi.encodeWithSignature("upchost()")); ok;
+    // }
+    // /**
+    //     @dev Set a collateral liquidation penalty. Amount will be converted to the correct internal precision.
+    //     @dev Equation used for conversion is (1 + pct / 10,000) * WAD
+    //     @param _ilk    The ilk to update (ex. bytes32("ETH-A"))
+    //     @param _pct_bps    The pct, in basis points, to set in integer form (x100). (ex. 10.25% = 10.25 * 100 = 1025)
+    // */
+    // function setIlkLiquidationPenalty(bytes32 _ilk, uint256 _pct_bps) public {
+    //     require(_pct_bps < BPS_ONE_HUNDRED_PCT);  // "LibDssExec/incorrect-ilk-chop-precision"
+    //     setValue(dog(), _ilk, "chop", WAD + wdiv(_pct_bps, BPS_ONE_HUNDRED_PCT));
+    //     (bool ok,) = clip(_ilk).call(abi.encodeWithSignature("upchost()")); ok;
+    // }
+    // /**
+    //     @dev Set max DAI amount for liquidation per vault for collateral. Amount will be converted to the correct internal precision.
+    //     @param _ilk    The ilk to update (ex. bytes32("ETH-A"))
+    //     @param _amount The amount to set in DAI (ex. 10m DAI amount == 10000000)
+    // */
+    // function setIlkMaxLiquidationAmount(bytes32 _ilk, uint256 _amount) public {
+    //     require(_amount < WAD);  // "LibDssExec/incorrect-ilk-hole-precision"
+    //     setValue(dog(), _ilk, "hole", _amount * RAD);
+    // }
+    // /**
+    //     @dev Set a collateral liquidation ratio. Amount will be converted to the correct internal precision.
+    //     @dev Equation used for conversion is pct * RAY / 10,000
+    //     @param _ilk    The ilk to update (ex. bytes32("ETH-A"))
+    //     @param _pct_bps    The pct, in basis points, to set in integer form (x100). (ex. 150% = 150 * 100 = 15000)
+    // */
+    // function setIlkLiquidationRatio(bytes32 _ilk, uint256 _pct_bps) public {
+    //     require(_pct_bps < 10 * BPS_ONE_HUNDRED_PCT); // "LibDssExec/incorrect-ilk-mat-precision" // Fails if pct >= 1000%
+    //     require(_pct_bps >= BPS_ONE_HUNDRED_PCT); // the liquidation ratio has to be bigger or equal to 100%
+    //     setValue(spotter(), _ilk, "mat", rdiv(_pct_bps, BPS_ONE_HUNDRED_PCT));
+    // }
+    // /**
+    //     @dev Set an auction starting multiplier. Amount will be converted to the correct internal precision.
+    //     @dev Equation used for conversion is pct * RAY / 10,000
+    //     @param _ilk      The ilk to update (ex. bytes32("ETH-A"))
+    //     @param _pct_bps  The pct, in basis points, to set in integer form (x100). (ex. 1.3x starting multiplier = 130% = 13000)
+    // */
+    // function setStartingPriceMultiplicativeFactor(bytes32 _ilk, uint256 _pct_bps) public {
+    //     require(_pct_bps < 10 * BPS_ONE_HUNDRED_PCT); // "LibDssExec/incorrect-ilk-mat-precision" // Fails if gt 10x
+    //     require(_pct_bps >= BPS_ONE_HUNDRED_PCT); // fail if start price is less than OSM price
+    //     setValue(clip(_ilk), "buf", rdiv(_pct_bps, BPS_ONE_HUNDRED_PCT));
+    // }
 
-    /**
-        @dev Set the amout of time before an auction resets.
-        @param _ilk      The ilk to update (ex. bytes32("ETH-A"))
-        @param _duration Amount of time before auction resets (in seconds).
-    */
-    function setAuctionTimeBeforeReset(bytes32 _ilk, uint256 _duration) public {
-        setValue(clip(_ilk), "tail", _duration);
-    }
+    // /**
+    //     @dev Set the amout of time before an auction resets.
+    //     @param _ilk      The ilk to update (ex. bytes32("ETH-A"))
+    //     @param _duration Amount of time before auction resets (in seconds).
+    // */
+    // function setAuctionTimeBeforeReset(bytes32 _ilk, uint256 _duration) public {
+    //     setValue(clip(_ilk), "tail", _duration);
+    // }
 
     /**
         @dev Percentage drop permitted before auction reset

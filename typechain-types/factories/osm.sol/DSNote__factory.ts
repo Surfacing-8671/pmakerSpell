@@ -17,31 +17,37 @@ const _abi = [
     inputs: [
       {
         indexed: true,
+        internalType: "bytes4",
         name: "sig",
         type: "bytes4",
       },
       {
         indexed: true,
+        internalType: "address",
         name: "guy",
         type: "address",
       },
       {
         indexed: true,
+        internalType: "bytes32",
         name: "foo",
         type: "bytes32",
       },
       {
         indexed: true,
+        internalType: "bytes32",
         name: "bar",
         type: "bytes32",
       },
       {
         indexed: false,
+        internalType: "uint256",
         name: "wad",
         type: "uint256",
       },
       {
         indexed: false,
+        internalType: "bytes",
         name: "fax",
         type: "bytes",
       },
@@ -52,7 +58,7 @@ const _abi = [
 ] as const;
 
 const _bytecode =
-  "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a7230582051e2feb0275fc13ff6ee99e029fe720f6be08ccc88ec498dee7e7daa51d8f4d10029";
+  "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a7231582077495ded7c765fa68156c1eae29a8604d2241e288f9d47bbec95aa5df2dfd59664736f6c63430005110032";
 
 type DSNoteConstructorParams =
   | [signer?: Signer]

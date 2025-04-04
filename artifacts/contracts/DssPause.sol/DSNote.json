@@ -8,31 +8,37 @@
       "inputs": [
         {
           "indexed": true,
+          "internalType": "bytes4",
           "name": "sig",
           "type": "bytes4"
         },
         {
           "indexed": true,
+          "internalType": "address",
           "name": "guy",
           "type": "address"
         },
         {
           "indexed": true,
+          "internalType": "bytes32",
           "name": "foo",
           "type": "bytes32"
         },
         {
           "indexed": true,
+          "internalType": "bytes32",
           "name": "bar",
           "type": "bytes32"
         },
         {
           "indexed": false,
+          "internalType": "uint256",
           "name": "wad",
           "type": "uint256"
         },
         {
           "indexed": false,
+          "internalType": "bytes",
           "name": "fax",
           "type": "bytes"
         }
@@ -41,8 +47,8 @@
       "type": "event"
     }
   ],
-  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a72305820b9af1871db9d69715c54178f164f84fd961d648e39741c8b9c06d3c501664b0b0029",
-  "deployedBytecode": "0x6080604052600080fdfea165627a7a72305820b9af1871db9d69715c54178f164f84fd961d648e39741c8b9c06d3c501664b0b0029",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a72315820440e817db758e15ebaa33a0652b4fe07320a564324c96bc9d6f33f8047ebd37b64736f6c63430005110032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a72315820440e817db758e15ebaa33a0652b4fe07320a564324c96bc9d6f33f8047ebd37b64736f6c63430005110032",
   "linkReferences": {},
   "deployedLinkReferences": {}
 }

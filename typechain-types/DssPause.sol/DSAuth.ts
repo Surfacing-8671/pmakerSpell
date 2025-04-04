@@ -24,31 +24,31 @@ import type {
 
 export interface DSAuthInterface extends Interface {
   getFunction(
-    nameOrSignature: "setOwner" | "setAuthority" | "owner" | "authority"
+    nameOrSignature: "authority" | "owner" | "setAuthority" | "setOwner"
   ): FunctionFragment;
 
   getEvent(
     nameOrSignatureOrTopic: "LogSetAuthority" | "LogSetOwner"
   ): EventFragment;
 
+  encodeFunctionData(functionFragment: "authority", values?: undefined): string;
+  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "setAuthority",
+    values: [AddressLike]
+  ): string;
   encodeFunctionData(
     functionFragment: "setOwner",
     values: [AddressLike]
   ): string;
-  encodeFunctionData(
-    functionFragment: "setAuthority",
-    values: [AddressLike]
-  ): string;
-  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
-  encodeFunctionData(functionFragment: "authority", values?: undefined): string;
 
-  decodeFunctionResult(functionFragment: "setOwner", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "authority", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "setAuthority",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "authority", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "setOwner", data: BytesLike): Result;
 }
 
 export namespace LogSetAuthorityEvent {
@@ -118,7 +118,9 @@ export interface DSAuth extends BaseContract {
     event?: TCEvent
   ): Promise<this>;
 
-  setOwner: TypedContractMethod<[owner_: AddressLike], [void], "nonpayable">;
+  authority: TypedContractMethod<[], [string], "view">;
+
+  owner: TypedContractMethod<[], [string], "view">;
 
   setAuthority: TypedContractMethod<
     [authority_: AddressLike],
@@ -126,26 +128,24 @@ export interface DSAuth extends BaseContract {
     "nonpayable"
   >;
 
-  owner: TypedContractMethod<[], [string], "view">;
-
-  authority: TypedContractMethod<[], [string], "view">;
+  setOwner: TypedContractMethod<[owner_: AddressLike], [void], "nonpayable">;
 
   getFunction<T extends ContractMethod = ContractMethod>(
     key: string | FunctionFragment
   ): T;
 
   getFunction(
-    nameOrSignature: "setOwner"
-  ): TypedContractMethod<[owner_: AddressLike], [void], "nonpayable">;
-  getFunction(
-    nameOrSignature: "setAuthority"
-  ): TypedContractMethod<[authority_: AddressLike], [void], "nonpayable">;
+    nameOrSignature: "authority"
+  ): TypedContractMethod<[], [string], "view">;
   getFunction(
     nameOrSignature: "owner"
   ): TypedContractMethod<[], [string], "view">;
   getFunction(
-    nameOrSignature: "authority"
-  ): TypedContractMethod<[], [string], "view">;
+    nameOrSignature: "setAuthority"
+  ): TypedContractMethod<[authority_: AddressLike], [void], "nonpayable">;
+  getFunction(
+    nameOrSignature: "setOwner"
+  ): TypedContractMethod<[owner_: AddressLike], [void], "nonpayable">;
 
   getEvent(
     key: "LogSetAuthority"
